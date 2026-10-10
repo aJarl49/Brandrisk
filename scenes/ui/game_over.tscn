@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b1mj151tn8t8b"]
+
+[node name="game_over" type="Node2D" unique_id=677676709]
+
+[node name="Button" type="Button" parent="." unique_id=1773249032]
+offset_left = 196.0
+offset_top = 457.0
+offset_right = 422.0
+offset_bottom = 510.0
+
+[node name="Label" type="Label" parent="Button" unique_id=2071256325]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 16.0
+offset_right = 187.0
+offset_bottom = 39.0
+text = "         RESTART"
+
+[node name="Button2" type="Button" parent="." unique_id=1528408428]
+offset_left = 751.0
+offset_top = 465.0
+offset_right = 965.0
+offset_bottom = 508.0
+
+[node name="Label" type="Label" parent="Button2" unique_id=369898269]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 10.0
+offset_right = 141.0
+offset_bottom = 33.0
+text = "    EXIT"
+
+[node name="Label" type="Label" parent="." unique_id=94683573]
+offset_left = 533.0
+offset_top = 222.0
+offset_right = 647.0
+offset_bottom = 245.0
+text = "GAME OVER"

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brandrisk player"
-run/main_scene="uid://bacjc3mtnbddo"
+run/main_scene="uid://6rbh6hrpe0oe"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
