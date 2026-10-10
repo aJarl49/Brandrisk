@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://btlvc72odhl7w"]
+
+[ext_resource type="Script" uid="uid://c6tqvbrxxklbk" path="res://scripts/ui/start_screen.gd" id="1_aqjl8"]
+
+[node name="StartScreen" type="Node2D" unique_id=699148651]
+script = ExtResource("1_aqjl8")
+
+[node name="Button" type="Button" parent="." unique_id=1877844357]
+anchors_preset = -1
+offset_left = 508.0
+offset_top = 488.0
+offset_right = 646.0
+offset_bottom = 524.0
+
+[node name="Label" type="Label" parent="." unique_id=642698377]
+offset_left = 534.0
+offset_top = 494.0
+offset_right = 606.0
+offset_bottom = 517.0
+text = "     START"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bxbdu64l8yq1i"]
+
+[sub_resource type="Animation" id="Animation_7dcit"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_i8df0"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.88),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2slu"]
+_data = {
+&"RESET": SubResource("Animation_7dcit"),
+&"new_animation": SubResource("Animation_i8df0")
+}
+
+[node name="credits" type="Node2D" unique_id=524729883]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1014744398]
+color = Color(0.60784316, 0.6392157, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1927122771]
+libraries/ = SubResource("AnimationLibrary_i2slu")
+
+[node name="Label" type="Label" parent="." unique_id=280600723]
+offset_left = 416.0
+offset_top = 241.0
+offset_right = 750.0
+offset_bottom = 407.0
+text = "CREATED BY
+PROGRAMMER
+ARTISTS
+psychos ;)"
