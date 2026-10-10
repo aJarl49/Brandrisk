@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gtvxqjyarty7" path="res://assets/sprites/Props/p_teddybear_OL.png" id="4_p5j7g"]
 [ext_resource type="Texture2D" uid="uid://bwp6jyjebo1p4" path="res://assets/sprites/Props/p_teddybear_ripped_OL.png" id="6_0cpst"]
 [ext_resource type="Texture2D" uid="uid://cqqm5ay4dwa6t" path="res://assets/sprites/Props/p_teddybear_emtied.png" id="7_lbmnx"]
+[ext_resource type="Texture2D" uid="uid://c3mrsuixdwh2c" path="res://assets/sprites/Props/p_cotton.png" id="8_lbmnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt5ay"]
 size = Vector2(82, 20)
@@ -19,6 +20,7 @@ highlighted_texture = ExtResource("4_p5j7g")
 ripped_sprite = ExtResource("3_e17qi")
 highlighted_ripped_sprite = ExtResource("6_0cpst")
 emptied_sprite = ExtResource("7_lbmnx")
+cotton_ball = ExtResource("8_lbmnx")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1594366038]
 modulate = Color(1, 1, 1, 1)

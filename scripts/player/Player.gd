@@ -2,10 +2,14 @@ extends CharacterBody2D
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite = $Sprite2D
+@onready var carried_item_sprite: Sprite2D = $CarriedItem
 @export var movement_speed: float = 200
 @export var dash_speed: float = 600.0
 @export var dash_duration: float = 0.15
 @export var double_tap_time: float = 0.25
+@export var cotton_ball_scene: PackedScene
+@export var cotton_ball_texture: Texture2D
+
 
 var character_direction: Vector2 = Vector2.ZERO
 var last_tap_direction: Vector2 = Vector2.ZERO
@@ -14,12 +18,21 @@ var is_dashing: bool = false
 var dash_timer: float = 0.0
 var dash_direction: Vector2 = Vector2.ZERO
 
+var inventory = {
+	"cotton ball" : false,
+	"coffee pot" : false, 
+	"power strip" : false
+}
+
 func _ready() -> void:
-	anim_player.play("idle")
+	update_animation("idle")
 
 func _process(delta: float) -> void:
 	if tap_timer > 0:
 		tap_timer -= delta
+		
+	if Input.is_action_just_pressed("drop_item"):
+		drop_held_item()
 
 func _physics_process(delta: float) -> void:
 	if is_dashing:
@@ -30,7 +43,6 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 	
-	# Check for double-tap inputs
 	var tap_direction := Vector2.ZERO
 
 	if Input.is_action_just_pressed("move_right"):
@@ -49,23 +61,19 @@ func _physics_process(delta: float) -> void:
 			last_tap_direction = tap_direction
 			tap_timer = double_tap_time
 
-	# Get movement vector (handles diagonals automatically)
 	character_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	if character_direction != Vector2.ZERO:
 		velocity = character_direction * movement_speed
-		if anim_player.current_animation != "walking": 
-			anim_player.current_animation = "walking"
+		update_animation("walking")
 			
-		# Only update flip direction if moving horizontally to keep diagonal flip stable
 		if character_direction.x > 0:
 			sprite.flip_h = true
 		elif character_direction.x < 0:
 			sprite.flip_h = false
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
-		if anim_player.current_animation != "idle": 
-			anim_player.play("idle")
+		update_animation("idle")
 
 	move_and_slide()
 
@@ -74,3 +82,58 @@ func start_dash(dir: Vector2) -> void:
 	dash_direction = dir
 	dash_timer = dash_duration
 	tap_timer = 0.0
+
+func is_carrying_anything() -> bool:
+	for item_name in inventory:
+		if inventory[item_name] == true:
+			
+			return true
+	return false
+
+func update_animation(base_anim: String) -> void:
+	var target_anim = base_anim
+	
+	if is_carrying_anything():
+		target_anim = "carry_" + base_anim
+		if inventory["cotton ball"] == true:
+			carried_item_sprite.texture = cotton_ball_texture
+		
+	if anim_player.current_animation != target_anim:
+		anim_player.play(target_anim)
+	
+	
+
+func drop_held_item() -> void:
+	var dropped_item_name = ""
+	
+	for item_name in inventory:
+		if inventory[item_name] == true:
+			dropped_item_name = item_name
+			inventory[item_name] = false
+			break 
+			
+	if dropped_item_name == "":
+		return
+		
+	print("Släppte: ", dropped_item_name)
+	
+	carried_item_sprite.texture = null
+	
+	var drop_instance = null
+	
+	if dropped_item_name == "cotton ball" and cotton_ball_scene:
+		drop_instance = cotton_ball_scene.instantiate()
+
+	if drop_instance:
+		get_tree().current_scene.add_child(drop_instance)
+		
+		var drop_offset = Vector2(0, 10) 
+		if character_direction != Vector2.ZERO:
+			drop_offset = character_direction * 20
+			
+		drop_instance.global_position = global_position + drop_offset
+
+	if character_direction != Vector2.ZERO:
+		update_animation("walking")
+	else:
+		update_animation("idle")
