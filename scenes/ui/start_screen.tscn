@@ -5,18 +5,67 @@
 [node name="StartScreen" type="Node2D" unique_id=699148651]
 script = ExtResource("1_aqjl8")
 
-[node name="Button" type="Button" parent="." unique_id=1877844357]
+[node name="Button_start" type="Button" parent="." unique_id=1877844357]
 anchors_preset = -1
-offset_left = 508.0
-offset_top = 488.0
-offset_right = 646.0
-offset_bottom = 524.0
+offset_left = 199.0
+offset_top = 410.0
+offset_right = 337.0
+offset_bottom = 446.0
 
-[node name="Label" type="Label" parent="." unique_id=642698377]
-offset_left = 534.0
-offset_top = 494.0
-offset_right = 606.0
-offset_bottom = 517.0
-text = "     START"
+[node name="Label_start" type="Label" parent="Button_start" unique_id=642698377]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 6.0
+offset_right = 116.0
+offset_bottom = 29.0
+text = "START"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Button_credits" type="Button" parent="." unique_id=838753440]
+anchors_preset = -1
+offset_left = 199.0
+offset_top = 517.0
+offset_right = 337.0
+offset_bottom = 553.0
+
+[node name="Label" type="Label" parent="Button_credits" unique_id=472240820]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 108.0
+offset_bottom = 30.0
+text = "CREDITS"
+
+[node name="Button_quit" type="Button" parent="." unique_id=2126648466]
+anchors_preset = -1
+offset_left = 749.0
+offset_top = 515.0
+offset_right = 887.0
+offset_bottom = 551.0
+
+[node name="Label_quit" type="Label" parent="Button_quit" unique_id=676133913]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 5.0
+offset_right = 120.0
+offset_bottom = 28.0
+text = "QUIT"
+
+[node name="Button_options" type="Button" parent="." unique_id=1473660600]
+anchors_preset = -1
+offset_left = 747.0
+offset_top = 416.0
+offset_right = 885.0
+offset_bottom = 452.0
+
+[node name="Label_options" type="Label" parent="Button_options" unique_id=527555835]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 5.0
+offset_right = 106.0
+offset_bottom = 28.0
+text = "OPTIONS"
+
+[connection signal="pressed" from="Button_start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button_credits" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button_quit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button_options" to="." method="_on_button_pressed"]
