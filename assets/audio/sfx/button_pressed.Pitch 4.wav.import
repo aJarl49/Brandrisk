@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3uvmg7ra4fte"
+path="res://.godot/imported/button_pressed.Pitch 4.wav-5ef95774894566ac9b375206f6a2f53b.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/button_pressed.Pitch 4.wav"
+dest_files=["res://.godot/imported/button_pressed.Pitch 4.wav-5ef95774894566ac9b375206f6a2f53b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
