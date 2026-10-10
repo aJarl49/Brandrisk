@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://hg3l2mwb5hg4"]
+
+[ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_i2d2h"]
+[ext_resource type="Script" uid="uid://d3c3iyjlx4gc4" path="res://scenes/objects/cotton_ball_pickup.gd" id="2_h5675"]
+[ext_resource type="Texture2D" uid="uid://c3mrsuixdwh2c" path="res://assets/sprites/Props/p_cotton.png" id="2_u00l4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5675"]
+
+[node name="InteractableObject" unique_id=1435307137 instance=ExtResource("1_i2d2h")]
+script = ExtResource("2_h5675")
+item_texture = ExtResource("2_u00l4")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1594366038]
+modulate = Color(1, 1, 1, 1)
+texture_filter = 1
+position = Vector2(-81.99999, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("2_u00l4")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=68815441]
+shape = SubResource("CircleShape2D_h5675")
+
+[node name="InteractionArea" parent="." index="2" unique_id=81549059]
+visible = false

@@ -33,7 +33,7 @@ func _ready() -> void:
 		print("No player found in scene")
 		return
 
-	timer.timeout.connect(_on_waiting_timer_timeout)
+
 	
 	# Starta direkt på första punkten (index 0)
 	is_moving = true

@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://c3v65y7ifi7qv"]
 
 [ext_resource type="Script" uid="uid://nlrs3jain8ua" path="res://scripts/player/Player.gd" id="1_gfjak"]
+[ext_resource type="PackedScene" uid="uid://hg3l2mwb5hg4" path="res://scenes/objects/cotton_ball_pickup.tscn" id="2_524rm"]
 [ext_resource type="Texture2D" uid="uid://d2gfjp6s1n5ru" path="res://assets/sprites/player sprite/C_pc_walking.png" id="2_gfjak"]
+[ext_resource type="Texture2D" uid="uid://dgk58caj78q1v" path="res://assets/sprites/player sprite/C_pc_holding.png" id="3_4kuee"]
+[ext_resource type="Texture2D" uid="uid://c3mrsuixdwh2c" path="res://assets/sprites/Props/p_cotton.png" id="5_tpg5x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17p5i"]
 radius = 31.016125
@@ -33,8 +36,66 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_tpg5x"]
+resource_name = "carry_idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_4kuee")]
+}
+
+[sub_resource type="Animation" id="Animation_c3xxp"]
+resource_name = "carry_walking"
+length = 0.26666668
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_4kuee")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.23333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+
 [sub_resource type="Animation" id="Animation_4kuee"]
 resource_name = "idle"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -46,6 +107,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("2_gfjak")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_524rm"]
@@ -64,16 +137,32 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 0, 1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_gfjak")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_524rm"]
 _data = {
 &"RESET": SubResource("Animation_gfjak"),
+&"carry_idle": SubResource("Animation_tpg5x"),
+&"carry_walking": SubResource("Animation_c3xxp"),
 &"idle": SubResource("Animation_4kuee"),
 &"walking": SubResource("Animation_524rm")
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=371344525 groups=["player"]]
 script = ExtResource("1_gfjak")
+cotton_ball_scene = ExtResource("2_524rm")
+cotton_ball_texture = ExtResource("5_tpg5x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1249057989]
 texture_filter = 1
@@ -83,6 +172,7 @@ texture = ExtResource("2_gfjak")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552064012]
+visible = false
 z_index = 1
 position = Vector2(0, 47)
 shape = SubResource("CircleShape2D_17p5i")
@@ -94,3 +184,8 @@ shape = SubResource("CircleShape2D_17p5i")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=936447202]
 libraries/ = SubResource("AnimationLibrary_524rm")
 autoplay = &"walking"
+
+[node name="CarriedItem" type="Sprite2D" parent="." unique_id=111070343]
+texture_filter = 1
+position = Vector2(0, 41.000004)
+scale = Vector2(5, 5)

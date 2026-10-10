@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://bacjc3mtnbddo"]
 
 [ext_resource type="PackedScene" uid="uid://c3v65y7ifi7qv" path="res://scenes/player/Player.tscn" id="1_2vj2h"]
-[ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="2_y0acb"]
+[ext_resource type="PackedScene" uid="uid://d2dedlx7be3jp" path="res://scenes/objects/teddy_bear.tscn" id="2_2vj2h"]
+[ext_resource type="PackedScene" uid="uid://bjuayxbpju4u7" path="res://scenes/objects/coffemaker.tscn" id="3_y0acb"]
 
 [node name="Main" type="Node2D" unique_id=800753564]
 
 [node name="TestPlayer" parent="." unique_id=371344525 instance=ExtResource("1_2vj2h")]
 position = Vector2(77, 99)
 
-[node name="CoffeeMaker" parent="." unique_id=1435307137 instance=ExtResource("2_y0acb")]
-position = Vector2(798, 301)
+[node name="TeddyBear" parent="." unique_id=1435307137 instance=ExtResource("2_2vj2h")]
+position = Vector2(754, 155)
+ripped_sprite = null
+highlighted_ripped_sprite = null
+emptied_sprite = null
+cotton_ball = null
 
-[node name="CoffeeMaker2" parent="." unique_id=231392389 instance=ExtResource("2_y0acb")]
-position = Vector2(564, 416)
+[node name="Coffemaker" parent="." unique_id=1856411417 instance=ExtResource("3_y0acb")]
+position = Vector2(285, 154)

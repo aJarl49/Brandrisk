@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bjuayxbpju4u7"]
+
+[ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_on2h5"]
+[ext_resource type="Script" uid="uid://d1hw0h8fegup1" path="res://scenes/objects/coffemaker.gd" id="2_7lp8u"]
+[ext_resource type="Texture2D" uid="uid://bekxr5hm2wpr7" path="res://assets/sprites/Props/p_kaffekokare1_kanna.png" id="2_hdsf3"]
+[ext_resource type="Texture2D" uid="uid://bgcml5f01lfrk" path="res://assets/sprites/Props/p_kaffekokare1_kanna_OL.png" id="4_ghjnj"]
+[ext_resource type="Texture2D" uid="uid://dv3rukd6y3tig" path="res://assets/sprites/Props/p_kaffekokare1.png" id="5_nbhv5"]
+[ext_resource type="Texture2D" uid="uid://bu2md3s1r8ecq" path="res://assets/sprites/Props/p_kaffekokare1_OL.png" id="6_1ufgm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcbb1"]
+size = Vector2(65, 128)
+
+[node name="Coffemaker" unique_id=1435307137 instance=ExtResource("1_on2h5")]
+script = ExtResource("2_7lp8u")
+normal_texture = ExtResource("2_hdsf3")
+highlighted_texture = ExtResource("4_ghjnj")
+without_can = ExtResource("5_nbhv5")
+highlighted_without_can = ExtResource("6_1ufgm")
+cotton_ball_texture = null
+highlighted_cotton_ball = null
+
+[node name="Sprite2D" parent="." index="0" unique_id=1594366038]
+modulate = Color(1, 1, 1, 1)
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_hdsf3")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=68815441]
+position = Vector2(22.5, 5)
+shape = SubResource("RectangleShape2D_wcbb1")
+
+[node name="InteractionArea" parent="." index="2" unique_id=81549059]
+texture_filter = 1
