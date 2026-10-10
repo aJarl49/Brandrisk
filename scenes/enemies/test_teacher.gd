@@ -2,19 +2,32 @@ extends CharacterBody2D
 
 @export var speed: float = 80.0
 @export var patrol_points: Array[Node2D] = []
+@export var pin_code_sounds: Array[AudioStreamWAV] = []
 @export var player: Node2D
+
 
 @onready var timer: Timer = $waiting_timer
 @onready var footstep_player = $footstep_player
 @onready var code_lock_player = $code_lock_player
-
+var pin_code : Array[int] = []
 var current_target_index: int = 0
 var is_moving: bool = false
 var waiting: bool = false
+func generate_pin_code() -> Array[int]:
+	var code: Array[int] = []
+	for i in range(4):
+		code.append(randi_range(0,9))
+	print("Genererad Kod: ", code)
+
+	return code
+	
+	
 
 func _ready() -> void:
 	if patrol_points.is_empty():
 		return
+		
+	pin_code = generate_pin_code()
 	
 	player = get_tree().get_first_node_in_group("player")
 	if not player:
@@ -53,6 +66,10 @@ func _physics_process(delta: float) -> void:
 		timer.start()
 		
 	update_footsteps()
+	
+func _input(event):
+	if Input.is_action_pressed("ui_accept"):
+		generate_pin_code()
 
 func start_moving_to_next_point():
 	# Gå till nästa punkt (loopar 0 -> 1 -> 2 -> 3 -> 0)
@@ -79,5 +96,11 @@ func update_footsteps():
 			footstep_player.stop()
 			
 func play_code_lock_sound():
-	if not code_lock_player.playing:
-		code_lock_player.play()
+	for digit in pin_code:
+		if digit < pin_code_sounds.size() and pin_code_sounds[digit]:
+			code_lock_player.stream = pin_code_sounds[digit]
+			code_lock_player.play()
+			await code_lock_player.finished
+
+		
+		
