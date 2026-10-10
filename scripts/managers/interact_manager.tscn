@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c8srdgy6n6u6s"]
+
+[ext_resource type="Script" uid="uid://debmaovels147" path="res://scripts/managers/interact_manager.gd" id="1_7l4kk"]
+
+[node name="InteractManager" type="Node" unique_id=1831517967]
+script = ExtResource("1_7l4kk")
+
+[node name="Label" type="Label" parent="." unique_id=436933679]
+offset_right = 40.0
+offset_bottom = 23.0

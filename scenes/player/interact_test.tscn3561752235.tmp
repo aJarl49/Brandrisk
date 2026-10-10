@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dmw786k6hxnlq"]
+
+[ext_resource type="Script" uid="uid://dm2qat5q5cd1k" path="res://scenes/player/interact_test.gd" id="1_2qju6"]
+[ext_resource type="Script" uid="uid://2hokwkwftcs8" path="res://scripts/managers/interaction_area.gd" id="2_0l3q2"]
+[ext_resource type="Texture2D" uid="uid://o81o2ftitodj" path="res://icon.svg" id="2_d5pj6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pg6nb"]
+radius = 249.07228
+
+[node name="interact_test" type="Node2D" unique_id=1050023948 groups=["player"]]
+script = ExtResource("1_2qju6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=640594123]
+texture = ExtResource("2_d5pj6")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1247054742]
+script = ExtResource("2_0l3q2")
+metadata/_custom_type_script = "uid://2hokwkwftcs8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=194830184]
+shape = SubResource("CircleShape2D_pg6nb")
+debug_color = Color(0.28973147, 0.6247342, 0.24408582, 0.41960785)
