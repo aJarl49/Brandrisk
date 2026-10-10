@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dy4ddln6pa7rs"]
+
+[ext_resource type="PackedScene" uid="uid://ch6nl53gnofgm" path="res://scenes/enemies/test_teacher.tscn" id="1_e2jsj"]
+[ext_resource type="PackedScene" uid="uid://c3v65y7ifi7qv" path="res://scenes/player/TestPlayer.tscn" id="2_f5153"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fb6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
+
+[node name="TestAiRobin" type="Node2D" unique_id=576261780]
+
+[node name="AI_Movement_Targets" type="Node" parent="." unique_id=1656484355]
+
+[node name="Point1" type="Area2D" parent="AI_Movement_Targets" unique_id=538395374]
+position = Vector2(150, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI_Movement_Targets/Point1" unique_id=1081600817]
+shape = SubResource("RectangleShape2D_8fb6m")
+
+[node name="Point2" type="Area2D" parent="AI_Movement_Targets" unique_id=230050509]
+position = Vector2(150, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI_Movement_Targets/Point2" unique_id=1541495348]
+shape = SubResource("RectangleShape2D_svdou")
+
+[node name="Point3" type="Area2D" parent="AI_Movement_Targets" unique_id=1660917751]
+position = Vector2(900, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI_Movement_Targets/Point3" unique_id=672060212]
+shape = SubResource("RectangleShape2D_svdou")
+
+[node name="Point4" type="Area2D" parent="AI_Movement_Targets" unique_id=787725272]
+position = Vector2(900, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI_Movement_Targets/Point4" unique_id=675567928]
+shape = SubResource("RectangleShape2D_svdou")
+
+[node name="TestTeacher" parent="." unique_id=1209084858 node_paths=PackedStringArray("patrol_points", "player") instance=ExtResource("1_e2jsj")]
+position = Vector2(8, -127)
+speed = 400.0
+patrol_points = [NodePath("../AI_Movement_Targets/Point1"), NodePath("../AI_Movement_Targets/Point2"), NodePath("../AI_Movement_Targets/Point3"), NodePath("../AI_Movement_Targets/Point4")]
+player = NodePath("../TestPlayer")
+
+[node name="TestPlayer" parent="." unique_id=371344525 instance=ExtResource("2_f5153")]
+position = Vector2(1043, 305)

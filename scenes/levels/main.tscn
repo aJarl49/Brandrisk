@@ -10,3 +10,6 @@ position = Vector2(77, 99)
 
 [node name="CoffeeMaker" parent="." unique_id=1435307137 instance=ExtResource("2_y0acb")]
 position = Vector2(798, 301)
+
+[node name="CoffeeMaker2" parent="." unique_id=231392389 instance=ExtResource("2_y0acb")]
+position = Vector2(564, 416)
