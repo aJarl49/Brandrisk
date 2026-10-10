@@ -7,9 +7,6 @@ extends Node
 
 	
 
-#var intro_instance: Node2D
-#var game_over_instance: Node2D
-#var credits_instance: Node2D
 var loop_started = false
 var current_screen:Node
 
@@ -28,7 +25,6 @@ func show_intro():
 	show_start_screen()
 	
 func show_start_screen():
-	print("show start screen")
 	clear_current_screen()
 	current_screen = start_screen.instantiate()
 	add_child(current_screen)
@@ -38,12 +34,14 @@ func show_start_screen():
 func _on_button_pressed():
 	current_screen.queue_free()
 	start_loop()
-#	instance.start_loop.connect(_on_start_loop)
 
 func start_loop():
+	print("loopStarted")
 	loop_started = true
 	clear_current_screen()
-	LevelManager.start_game()
+	var level = preload("res://scenes/ui/level_manger.tscn").instantiate()
+	add_child(level)
+	#LevelManager.restart_game()
 
 func show_game_over(background_texture = null):
 	current_screen = game_over.instantiate()
