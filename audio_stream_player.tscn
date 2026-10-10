@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c7f4d0rgmso3m"]
+
+[ext_resource type="AudioStream" uid="uid://esu4j1wgwflv" path="res://assets/audio/music/musicBrand.mp3" id="1_td4n3"]
+[ext_resource type="Script" uid="uid://384s8b4xhmul" path="res://audio_stream_player.gd" id="2_i5m0e"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=368120796]
+stream = ExtResource("1_td4n3")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("2_i5m0e")
