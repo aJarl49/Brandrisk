@@ -1,16 +1,12 @@
 extends Node2D
+signal button_pressed
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _on_button_pressed() -> void:
+	button_pressed.emit()
+	print("Signal emitted from button")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _on_button_pressed()->void:
-	emit_signal("start_pressed")
-	
-func _process(_delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		emit_signal("start_pressed")
-	
+#func _process(_delta: float) -> void:
+#	if Input.is_action_just_pressed("ui_accept"):
+#		button_pressed.emit()
+#		print("Signal emitted from keyboard")

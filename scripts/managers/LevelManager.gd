@@ -20,10 +20,10 @@ var _initialized = false;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if not _initialized:
-			_initialized = true
+		_initialized = true
 
-
+func start_game():
+	pass
 	
 func spawn_hud():
 	if hud_instance:
