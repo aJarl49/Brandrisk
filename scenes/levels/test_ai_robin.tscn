@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cltmx6sr4mn25"]
 
 [ext_resource type="PackedScene" uid="uid://bwdj22r4x3cvq" path="res://scenes/enemies/test_teacher.tscn" id="1_e2jsj"]
-[ext_resource type="PackedScene" uid="uid://c3v65y7ifi7qv" path="res://scenes/player/Player.tscn" id="2_f5153"]
+[ext_resource type="PackedScene" uid="uid://c3v65y7ifi7qv" path="res://scenes/player/TestPlayer.tscn" id="2_f5153"]
 [ext_resource type="AudioStream" uid="uid://w7x8hjvkaiqr" path="res://assets/audio/sfx/button_pressed.Pitch 0.wav" id="2_wcbb1"]
 [ext_resource type="AudioStream" uid="uid://cs1f2oyyfdd7m" path="res://assets/audio/sfx/button_pressed.Pitch 1.wav" id="3_gpgpw"]
 [ext_resource type="AudioStream" uid="uid://ctkhi7ceitmoh" path="res://assets/audio/sfx/button_pressed.Pitch 2.wav" id="4_rtwef"]
@@ -50,6 +50,7 @@ position = Vector2(8, -127)
 speed = 400.0
 patrol_points = [NodePath("../AI_Movement_Targets/Point1"), NodePath("../AI_Movement_Targets/Point2"), NodePath("../AI_Movement_Targets/Point3"), NodePath("../AI_Movement_Targets/Point4")]
 pin_code_sounds = Array[AudioStreamWAV]([ExtResource("2_wcbb1"), ExtResource("3_gpgpw"), ExtResource("4_rtwef"), ExtResource("5_n0clw"), ExtResource("6_f5srg"), ExtResource("7_yklhj"), ExtResource("8_0jnt8"), ExtResource("9_ma02d"), ExtResource("10_1s0n6"), ExtResource("11_3i7jx")])
+player = NodePath("../TestPlayer")
 player = NodePath("../TestPlayer")
 
 [node name="TestPlayer" parent="." unique_id=371344525 instance=ExtResource("2_f5153")]

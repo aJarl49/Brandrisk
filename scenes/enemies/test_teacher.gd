@@ -20,14 +20,13 @@ func generate_pin_code() -> Array[int]:
 	print("Genererad Kod: ", code)
 
 	return code
-	
-	
 
 func _ready() -> void:
 	if patrol_points.is_empty():
 		return
-		
 	pin_code = generate_pin_code()
+	
+	player = get_tree().get_first_node_in_group("player")
 	
 	player = get_tree().get_first_node_in_group("player")
 	if not player:
@@ -66,7 +65,6 @@ func _physics_process(delta: float) -> void:
 		timer.start()
 		
 	update_footsteps()
-	
 func _input(event):
 	if Input.is_action_pressed("ui_accept"):
 		generate_pin_code()
@@ -99,8 +97,6 @@ func play_code_lock_sound():
 	for digit in pin_code:
 		if digit < pin_code_sounds.size() and pin_code_sounds[digit]:
 			code_lock_player.stream = pin_code_sounds[digit]
-			code_lock_player.play()
+			if not code_lock_player.playing:
+				code_lock_player.play()
 			await code_lock_player.finished
-
-		
-		
