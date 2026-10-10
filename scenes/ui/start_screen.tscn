@@ -20,6 +20,21 @@ offset_right = 116.0
 offset_bottom = 29.0
 text = "START"
 
+[node name="Button_settings" type="Button" parent="." unique_id=1473660600]
+anchors_preset = -1
+offset_left = 747.0
+offset_top = 416.0
+offset_right = 885.0
+offset_bottom = 452.0
+
+[node name="Label_settings" type="Label" parent="Button_settings" unique_id=527555835]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 5.0
+offset_right = 106.0
+offset_bottom = 28.0
+text = "SETTINGS"
+
 [node name="Button_credits" type="Button" parent="." unique_id=838753440]
 anchors_preset = -1
 offset_left = 199.0
@@ -50,22 +65,7 @@ offset_right = 120.0
 offset_bottom = 28.0
 text = "QUIT"
 
-[node name="Button_options" type="Button" parent="." unique_id=1473660600]
-anchors_preset = -1
-offset_left = 747.0
-offset_top = 416.0
-offset_right = 885.0
-offset_bottom = 452.0
-
-[node name="Label_options" type="Label" parent="Button_options" unique_id=527555835]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 5.0
-offset_right = 106.0
-offset_bottom = 28.0
-text = "OPTIONS"
-
-[connection signal="pressed" from="Button_start" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button_credits" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button_quit" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button_options" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button_start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Button_credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Button_quit" to="." method="_on_quit_pressed"]
