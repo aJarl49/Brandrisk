@@ -13,18 +13,11 @@ var pin_code : Array[int] = []
 var current_target_index: int = 0
 var is_moving: bool = false
 var waiting: bool = false
-func generate_pin_code() -> Array[int]:
-	var code: Array[int] = []
-	for i in range(4):
-		code.append(randi_range(0,9))
-	print("Genererad Kod: ", code)
 
-	return code
 
 func _ready() -> void:
 	if patrol_points.is_empty():
 		return
-	pin_code = generate_pin_code()
 	
 	player = get_tree().get_first_node_in_group("player")
 	
@@ -67,7 +60,7 @@ func _physics_process(delta: float) -> void:
 	update_footsteps()
 func _input(event):
 	if Input.is_action_pressed("ui_accept"):
-		generate_pin_code()
+		PinCodeManager.generate_pin_code()
 
 func start_moving_to_next_point():
 	# Gå till nästa punkt (loopar 0 -> 1 -> 2 -> 3 -> 0)

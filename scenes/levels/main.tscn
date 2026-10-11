@@ -1,8 +1,7 @@
 [gd_scene format=4 uid="uid://bacjc3mtnbddo"]
 
 [ext_resource type="PackedScene" uid="uid://c3v65y7ifi7qv" path="res://scenes/player/Player.tscn" id="1_2vj2h"]
-[ext_resource type="PackedScene" uid="uid://d2dedlx7be3jp" path="res://scenes/objects/teddy_bear.tscn" id="2_2vj2h"]
-[ext_resource type="PackedScene" uid="uid://bjuayxbpju4u7" path="res://scenes/objects/coffemaker.tscn" id="3_y0acb"]
+[ext_resource type="PackedScene" uid="uid://dlxnmki5sn0cr" path="res://scenes/objects/mute_button.tscn" id="3_y0acb"]
 [ext_resource type="Texture2D" uid="uid://b0ec0f2051ygq" path="res://assets/sprites/TileMap/TileMap.png" id="4_j4d2a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6bv0"]
@@ -289,20 +288,6 @@ physics_layer_0/collision_layer = 1
 
 [node name="Main" type="Node2D" unique_id=800753564]
 
-[node name="TestPlayer" parent="." unique_id=371344525 instance=ExtResource("1_2vj2h")]
-z_index = 1
-position = Vector2(-237.99997, -345.99997)
-
-[node name="TeddyBear" parent="." unique_id=1435307137 instance=ExtResource("2_2vj2h")]
-position = Vector2(754, 155)
-ripped_sprite = null
-highlighted_ripped_sprite = null
-emptied_sprite = null
-cotton_ball = null
-
-[node name="Coffemaker" parent="." unique_id=1856411417 instance=ExtResource("3_y0acb")]
-position = Vector2(285, 154)
-
 [node name="Node2D" type="Node2D" parent="." unique_id=48320803]
 
 [node name="Floor" type="TileMapLayer" parent="Node2D" unique_id=1289661255]
@@ -326,3 +311,14 @@ tile_set = SubResource("TileSet_tsfue")
 tile_set = SubResource("TileSet_48que")
 
 [node name="Area2D" type="Area2D" parent="Node2D" unique_id=1858064297]
+
+[node name="Player" parent="." unique_id=371344525 instance=ExtResource("1_2vj2h")]
+position = Vector2(-2459, -300)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1962510901]
+
+[node name="MuteButton" parent="CanvasLayer" unique_id=959389631 instance=ExtResource("3_y0acb")]
+offset_left = 2.0000038
+offset_top = 2.0000076
+offset_right = 130.0
+offset_bottom = 130.0
