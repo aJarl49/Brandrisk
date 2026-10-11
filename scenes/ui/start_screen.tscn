@@ -1,9 +1,38 @@
 [gd_scene format=3 uid="uid://btlvc72odhl7w"]
 
 [ext_resource type="Script" uid="uid://c6tqvbrxxklbk" path="res://scripts/ui/start_screen.gd" id="1_aqjl8"]
+[ext_resource type="Texture2D" uid="uid://cbaf6eg5t21e5" path="res://assets/sprites/Props/schoolbuilding.png" id="2_m7t1o"]
 
 [node name="StartScreen" type="Node2D" unique_id=699148651]
 script = ExtResource("1_aqjl8")
+
+[node name="background" type="CanvasLayer" parent="." unique_id=430437151]
+layer = -2
+
+[node name="TextureRect" type="TextureRect" parent="background" unique_id=606489408]
+z_index = -1
+offset_right = 1150.0
+offset_bottom = 649.0
+texture = ExtResource("2_m7t1o")
+
+[node name="buttons_image" type="CanvasLayer" parent="." unique_id=843443926]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="buttons_image" unique_id=1905447958]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="buttons_image" unique_id=634152708]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="buttons_image" unique_id=2057413124]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect4" type="TextureRect" parent="buttons_image" unique_id=867205555]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Button_start" type="Button" parent="." unique_id=1877844357]
 anchors_preset = -1
