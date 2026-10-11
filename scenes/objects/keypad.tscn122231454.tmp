@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cf2grc8l85k53"]
+
+[ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_lxlkm"]
+[ext_resource type="Texture2D" uid="uid://bsf56g1n1w10w" path="res://assets/sprites/Props/p_keypad_small.png" id="2_fg3ax"]
+[ext_resource type="Script" uid="uid://nwyfi7tj6881" path="res://scenes/objects/keypad.gd" id="3_fg3ax"]
+
+[node name="Keypad" unique_id=1435307137 instance=ExtResource("1_lxlkm")]
+script = ExtResource("3_fg3ax")
+normal_texture = null
+highlighted_texture = null
+key_pad_minigame = null
+
+[node name="Sprite2D" parent="." index="0" unique_id=1594366038]
+modulate = Color(1, 1, 1, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fg3ax")
+
+[node name="InteractionArea" parent="." index="2" unique_id=81549059]
+position = Vector2(0, -1.9999999)
