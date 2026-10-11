@@ -2,6 +2,8 @@ extends Node
 
 
 var pin_code : Array[int] = []
+var is_playing: bool = false
+
 
 func generate_pin_code() -> Array[int]:
 	var code: Array[int] = []

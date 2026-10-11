@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d2vlu7tabesyp"]
+
+[ext_resource type="Texture2D" uid="uid://cw7so614xdgxq" path="res://assets/sprites/Props/computer screensaver.png" id="1_oabsx"]
+
+[node name="PC_Scene" type="Node2D" unique_id=679512116]
+
+[node name="ComputerScreensaver" type="Sprite2D" parent="." unique_id=965898081]
+position = Vector2(573, 318.5)
+scale = Vector2(1.778125, 1.7638888)
+texture = ExtResource("1_oabsx")
