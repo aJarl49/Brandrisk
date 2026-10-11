@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjuayxbpju4u7"]
 
 [ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_on2h5"]
-[ext_resource type="Script" uid="uid://d1hw0h8fegup1" path="res://scenes/objects/coffemaker.gd" id="2_7lp8u"]
+[ext_resource type="Script" uid="uid://d1hw0h8fegup1" path="res://scripts/objects/coffemaker.gd" id="2_7lp8u"]
 [ext_resource type="Texture2D" uid="uid://bekxr5hm2wpr7" path="res://assets/sprites/Props/p_kaffekokare1_kanna.png" id="2_hdsf3"]
 [ext_resource type="Texture2D" uid="uid://bgcml5f01lfrk" path="res://assets/sprites/Props/p_kaffekokare1_kanna_OL.png" id="4_ghjnj"]
 [ext_resource type="Texture2D" uid="uid://dv3rukd6y3tig" path="res://assets/sprites/Props/p_kaffekokare1.png" id="5_nbhv5"]
