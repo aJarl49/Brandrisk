@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://d2dedlx7be3jp" path="res://scenes/objects/teddy_bear.tscn" id="2_2vj2h"]
 [ext_resource type="PackedScene" uid="uid://bjuayxbpju4u7" path="res://scenes/objects/coffemaker.tscn" id="3_y0acb"]
 [ext_resource type="Texture2D" uid="uid://b0ec0f2051ygq" path="res://assets/sprites/TileMap/TileMap.png" id="4_j4d2a"]
+[ext_resource type="PackedScene" uid="uid://cf2grc8l85k53" path="res://scenes/objects/keypad.tscn" id="4_u81e1"]
 [ext_resource type="Texture2D" uid="uid://dmqp0xwumyphf" path="res://assets/sprites/TileMap/CollisionTiles.png" id="5_u81e1"]
 [ext_resource type="Texture2D" uid="uid://xwfi3724cmck" path="res://assets/sprites/Props/p_studentdesk.png" id="6_b6bv0"]
 [ext_resource type="Texture2D" uid="uid://bf1e37x57w0l7" path="res://assets/sprites/Props/p_studentchair.png" id="7_ubwgw"]
 [ext_resource type="Texture2D" uid="uid://b0brvk3ef8w4j" path="res://assets/sprites/Props/p_teacherdesk.png" id="8_vkq25"]
 [ext_resource type="Texture2D" uid="uid://brmahmsllynq0" path="res://assets/sprites/Props/p_computer_backside.png" id="9_7lrji"]
+[ext_resource type="PackedScene" uid="uid://dlxnmki5sn0cr" path="res://scenes/objects/mute_button.tscn" id="11_hwp66"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6bv0"]
 texture = ExtResource("4_j4d2a")
@@ -415,17 +417,7 @@ size = Vector2(36.800003, 18.600006)
 
 [node name="TestPlayer" parent="." unique_id=371344525 instance=ExtResource("1_2vj2h")]
 z_index = 3
-position = Vector2(-1165, -2137)
-
-[node name="TeddyBear" parent="." unique_id=1435307137 instance=ExtResource("2_2vj2h")]
-position = Vector2(754, 155)
-ripped_sprite = null
-highlighted_ripped_sprite = null
-emptied_sprite = null
-cotton_ball = null
-
-[node name="Coffemaker" parent="." unique_id=1856411417 instance=ExtResource("3_y0acb")]
-position = Vector2(285, 154)
+position = Vector2(-2335, -1040)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=48320803]
 
@@ -1148,3 +1140,12 @@ position = Vector2(-231, -2342)
 [node name="TeddyBear2" parent="." unique_id=510413137 instance=ExtResource("2_2vj2h")]
 z_index = 2
 position = Vector2(-470, -499)
+
+[node name="Keypad" parent="." unique_id=803994468 instance=ExtResource("4_u81e1")]
+position = Vector2(-2610, -1270)
+
+[node name="MuteButton" parent="." unique_id=959389631 instance=ExtResource("11_hwp66")]
+offset_left = 983.0
+offset_top = 11.0
+offset_right = 1023.0
+offset_bottom = 51.0

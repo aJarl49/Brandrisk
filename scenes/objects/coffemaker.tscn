@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bgcml5f01lfrk" path="res://assets/sprites/Props/p_kaffekokare1_kanna_OL.png" id="4_ghjnj"]
 [ext_resource type="Texture2D" uid="uid://dv3rukd6y3tig" path="res://assets/sprites/Props/p_kaffekokare1.png" id="5_nbhv5"]
 [ext_resource type="Texture2D" uid="uid://bu2md3s1r8ecq" path="res://assets/sprites/Props/p_kaffekokare1_OL.png" id="6_1ufgm"]
+[ext_resource type="Texture2D" uid="uid://dp0n41ru4ei3d" path="res://assets/sprites/Props/p_kaffekokare1_bommul.png" id="7_1ufgm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wcbb1"]
 size = Vector2(65, 128)
@@ -16,7 +17,7 @@ normal_texture = ExtResource("2_hdsf3")
 highlighted_texture = ExtResource("4_ghjnj")
 without_can = ExtResource("5_nbhv5")
 highlighted_without_can = ExtResource("6_1ufgm")
-cotton_ball_texture = null
+cotton_ball_texture = ExtResource("7_1ufgm")
 highlighted_cotton_ball = null
 
 [node name="Sprite2D" parent="." index="0" unique_id=1594366038]
