@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dqbqiit7xc4mq" path="res://scenes/objects/extension_cord_pickup.tscn" id="4_aqr7t"]
 [ext_resource type="PackedScene" uid="uid://dpp8l4p6y7que" path="res://scenes/objects/fire_animation.tscn" id="6_omqt7"]
 [ext_resource type="PackedScene" uid="uid://dlxnmki5sn0cr" path="res://scenes/objects/mute_button.tscn" id="6_psoid"]
+[ext_resource type="PackedScene" uid="uid://cf2grc8l85k53" path="res://scenes/objects/keypad.tscn" id="7_omqt7"]
 
 [node name="Interact_Test" type="Node2D" unique_id=1627900195]
 
@@ -34,3 +35,6 @@ texture_pressed = null
 
 [node name="Node2D" parent="." unique_id=1349408931 instance=ExtResource("6_omqt7")]
 position = Vector2(260, 115)
+
+[node name="Keypad" parent="." unique_id=2111750277 instance=ExtResource("7_omqt7")]
+position = Vector2(393, 143)

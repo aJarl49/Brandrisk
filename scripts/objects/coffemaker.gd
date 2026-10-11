@@ -75,7 +75,7 @@ func _update_sprite_visuals() -> void:
 		elif sprite_index == 1:
 			sprite.texture = highlighted_without_can
 		elif sprite_index == 2:
-			sprite.texture = highlighted_cotton_ball
+			return
 	else:
 		if sprite_index == 0:
 			sprite.texture = normal_texture
