@@ -3,21 +3,12 @@
 [ext_resource type="Script" uid="uid://x0xpkwtxinhs" path="res://scenes/enemies/test_teacher.gd" id="1_a0ytd"]
 [ext_resource type="Texture2D" uid="uid://ge5ilclykpkk" path="res://icon.svg" id="2_nq6xs"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_svdou"]
-radius = 77.00649
-
 [node name="TestTeacher" type="CharacterBody2D" unique_id=1209084858]
 script = ExtResource("1_a0ytd")
-speed = null
-pin_code_sounds = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=798040794]
 modulate = Color(0.73924726, 0.04274807, 0.19837815, 1)
 texture = ExtResource("2_nq6xs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=931596834]
-position = Vector2(0, -1)
-shape = SubResource("CircleShape2D_svdou")
 
 [node name="waiting_timer" type="Timer" parent="." unique_id=135395188]
 one_shot = true
