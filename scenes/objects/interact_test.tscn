@@ -2,19 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://d2dedlx7be3jp" path="res://scenes/objects/teddy_bear.tscn" id="1_mt5ay"]
 [ext_resource type="PackedScene" uid="uid://c3v65y7ifi7qv" path="res://scenes/player/Player.tscn" id="2_116yx"]
+[ext_resource type="PackedScene" uid="uid://66p0vyux3t71" path="res://scenes/objects/coffe_pot_pickup.tscn" id="2_aqr7t"]
 [ext_resource type="PackedScene" uid="uid://bjuayxbpju4u7" path="res://scenes/objects/coffemaker.tscn" id="3_116yx"]
+[ext_resource type="Texture2D" uid="uid://dvxhlk1mh3gu" path="res://assets/sprites/Props/p_kaffekanna.png" id="3_psoid"]
 
 [node name="Interact_Test" type="Node2D" unique_id=1627900195]
 
 [node name="Player" parent="." unique_id=371344525 instance=ExtResource("2_116yx")]
 z_index = 1
 position = Vector2(469, 328)
-
-[node name="Coffemaker" parent="." unique_id=1435307137 instance=ExtResource("3_116yx")]
-position = Vector2(583, 482)
-without_can = null
-highlighted_without_can = null
+coffe_pot_scene = ExtResource("2_aqr7t")
+coffe_pot_texture = ExtResource("3_psoid")
 
 [node name="TeddyBear" parent="." unique_id=261547050 instance=ExtResource("1_mt5ay")]
 position = Vector2(842, 163)
 cotton_ball = null
+
+[node name="Coffemaker" parent="." unique_id=1435307137 instance=ExtResource("3_116yx")]
+position = Vector2(106, 372)

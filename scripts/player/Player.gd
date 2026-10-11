@@ -9,6 +9,10 @@ extends CharacterBody2D
 @export var double_tap_time: float = 0.25
 @export var cotton_ball_scene: PackedScene
 @export var cotton_ball_texture: Texture2D
+@export var coffe_pot_scene: PackedScene
+@export var coffe_pot_texture: Texture2D
+@export var power_strip_scene: Texture2D
+@export var power_strip_texture: Texture2D
 
 
 var character_direction: Vector2 = Vector2.ZERO
@@ -97,6 +101,11 @@ func update_animation(base_anim: String) -> void:
 		target_anim = "carry_" + base_anim
 		if inventory["cotton ball"] == true:
 			carried_item_sprite.texture = cotton_ball_texture
+		elif inventory["coffee pot"] == true:
+			carried_item_sprite.texture = coffe_pot_texture
+		elif inventory["power strip"] == true:
+			carried_item_sprite.texture = power_strip_texture
+			
 		
 	if anim_player.current_animation != target_anim:
 		anim_player.play(target_anim)
@@ -123,7 +132,10 @@ func drop_held_item() -> void:
 	
 	if dropped_item_name == "cotton ball" and cotton_ball_scene:
 		drop_instance = cotton_ball_scene.instantiate()
-
+	elif dropped_item_name == "coffee pot" and coffe_pot_scene:
+		drop_instance = coffe_pot_scene.instantiate()
+	elif dropped_item_name == "power strip" and power_strip_scene:
+			drop_instance = power_strip_scene.instantiate()
 	if drop_instance:
 		get_tree().current_scene.add_child(drop_instance)
 		
