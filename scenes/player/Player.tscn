@@ -235,6 +235,8 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" unique_id=371344525 groups=["player"]]
 script = ExtResource("1_gfjak")
+movement_speed = 400.0
+dash_speed = 800.0
 cotton_ball_scene = ExtResource("2_524rm")
 cotton_ball_texture = ExtResource("5_tpg5x")
 coffe_pot_scene = ExtResource("4_180ig")

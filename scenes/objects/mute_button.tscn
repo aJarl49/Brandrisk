@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://dlxnmki5sn0cr"]
 
-[ext_resource type="Texture2D" uid="uid://ge5ilclykpkk" path="res://icon.svg" id="1_la02h"]
+[ext_resource type="Texture2D" uid="uid://bv7wav2vhrrab" path="res://assets/sprites/Props/sound_ON.png" id="1_xu271"]
 [ext_resource type="Script" uid="uid://cqymnrn8otq" path="res://scenes/objects/mute_button.gd" id="2_qidin"]
+[ext_resource type="Texture2D" uid="uid://btgdehwojlwhy" path="res://assets/sprites/Props/sound_OFF.png" id="2_whit5"]
 
 [node name="MuteButton" type="TextureButton" unique_id=959389631]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(4, 4)
 focus_mode = 0
 toggle_mode = true
 keep_pressed_outside = true
-texture_normal = ExtResource("1_la02h")
-texture_pressed = ExtResource("1_la02h")
+texture_normal = ExtResource("1_xu271")
+texture_pressed = ExtResource("2_whit5")
 script = ExtResource("2_qidin")
