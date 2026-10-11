@@ -9,6 +9,7 @@ var entered_code: Array[int] = []
 
 func _ready() -> void:
 	print(PinCodeManager.pin_code)
+	player = get_tree().get_first_node_in_group("player")
 
 
 func register_press(number: int) -> void:

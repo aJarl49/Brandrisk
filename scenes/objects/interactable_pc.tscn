@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://v1hvwhlfbhj4"]
+
+[ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_xly3x"]
+[ext_resource type="Script" uid="uid://c1fuwdy5d133g" path="res://scenes/objects/interactable_pc.gd" id="2_q7eh3"]
+[ext_resource type="Texture2D" uid="uid://brmahmsllynq0" path="res://assets/sprites/Props/p_computer_backside.png" id="3_mn6yt"]
+[ext_resource type="Texture2D" uid="uid://b3icv623iutjk" path="res://assets/sprites/Props/p_computer_backside_OL.png" id="4_y8ypa"]
+[ext_resource type="PackedScene" uid="uid://d2vlu7tabesyp" path="res://scenes/objects/pc_scene.tscn" id="5_y8ypa"]
+
+[node name="InteractableObject" unique_id=1435307137 instance=ExtResource("1_xly3x")]
+scale = Vector2(5, 5)
+script = ExtResource("2_q7eh3")
+normal_texture = ExtResource("3_mn6yt")
+highlighted_texture = ExtResource("4_y8ypa")
+pc_scene = ExtResource("5_y8ypa")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1594366038]
+modulate = Color(1, 1, 1, 1)
+texture = ExtResource("3_mn6yt")
+
+[node name="InteractionArea" parent="." index="2" unique_id=81549059]
+scale = Vector2(0.2, 0.2)
