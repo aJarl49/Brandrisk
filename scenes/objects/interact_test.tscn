@@ -2,17 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://d2dedlx7be3jp" path="res://scenes/objects/teddy_bear.tscn" id="1_mt5ay"]
 [ext_resource type="PackedScene" uid="uid://c3v65y7ifi7qv" path="res://scenes/player/Player.tscn" id="2_116yx"]
-[ext_resource type="PackedScene" uid="uid://66p0vyux3t71" path="res://scenes/objects/coffe_pot_pickup.tscn" id="2_aqr7t"]
 [ext_resource type="PackedScene" uid="uid://bjuayxbpju4u7" path="res://scenes/objects/coffemaker.tscn" id="3_116yx"]
-[ext_resource type="Texture2D" uid="uid://dvxhlk1mh3gu" path="res://assets/sprites/Props/p_kaffekanna.png" id="3_psoid"]
+[ext_resource type="PackedScene" uid="uid://dqbqiit7xc4mq" path="res://scenes/objects/extension_cord_pickup.tscn" id="4_aqr7t"]
+[ext_resource type="PackedScene" uid="uid://dpp8l4p6y7que" path="res://scenes/objects/fire_animation.tscn" id="6_omqt7"]
+[ext_resource type="PackedScene" uid="uid://dlxnmki5sn0cr" path="res://scenes/objects/mute_button.tscn" id="6_psoid"]
 
 [node name="Interact_Test" type="Node2D" unique_id=1627900195]
 
 [node name="Player" parent="." unique_id=371344525 instance=ExtResource("2_116yx")]
 z_index = 1
 position = Vector2(469, 328)
-coffe_pot_scene = ExtResource("2_aqr7t")
-coffe_pot_texture = ExtResource("3_psoid")
 
 [node name="TeddyBear" parent="." unique_id=261547050 instance=ExtResource("1_mt5ay")]
 position = Vector2(842, 163)
@@ -20,3 +19,18 @@ cotton_ball = null
 
 [node name="Coffemaker" parent="." unique_id=1435307137 instance=ExtResource("3_116yx")]
 position = Vector2(106, 372)
+
+[node name="InteractableObject" parent="." unique_id=326393249 instance=ExtResource("4_aqr7t")]
+position = Vector2(625, 524)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1700003702]
+
+[node name="MuteButton" parent="CanvasLayer" unique_id=959389631 instance=ExtResource("6_psoid")]
+offset_left = 842.0
+offset_top = 3.0
+offset_right = 970.0
+offset_bottom = 131.0
+texture_pressed = null
+
+[node name="Node2D" parent="." unique_id=1349408931 instance=ExtResource("6_omqt7")]
+position = Vector2(260, 115)

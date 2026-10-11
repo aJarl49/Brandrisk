@@ -3,15 +3,22 @@
 [ext_resource type="Script" uid="uid://nlrs3jain8ua" path="res://scripts/player/Player.gd" id="1_gfjak"]
 [ext_resource type="PackedScene" uid="uid://hg3l2mwb5hg4" path="res://scenes/objects/cotton_ball_pickup.tscn" id="2_524rm"]
 [ext_resource type="Texture2D" uid="uid://d2gfjp6s1n5ru" path="res://assets/sprites/player sprite/C_pc_walking.png" id="2_gfjak"]
+[ext_resource type="PackedScene" uid="uid://66p0vyux3t71" path="res://scenes/objects/coffe_pot_pickup.tscn" id="4_180ig"]
+[ext_resource type="Texture2D" uid="uid://dvxhlk1mh3gu" path="res://assets/sprites/Props/p_kaffekanna.png" id="5_20koh"]
 [ext_resource type="Texture2D" uid="uid://c3mrsuixdwh2c" path="res://assets/sprites/Props/p_cotton.png" id="5_tpg5x"]
+[ext_resource type="Texture2D" uid="uid://d2cwlg7t14u7k" path="res://assets/sprites/player sprite/character idle animation holding-Sheet.png" id="5_v42im"]
 [ext_resource type="Texture2D" uid="uid://bqnx227vollnv" path="res://assets/sprites/player sprite/character walking with blink.png" id="6_c3xxp"]
 [ext_resource type="Texture2D" uid="uid://cc8bw3kv5k3tv" path="res://assets/sprites/player sprite/character carrying object with blinking.png" id="6_npwbq"]
+[ext_resource type="PackedScene" uid="uid://dqbqiit7xc4mq" path="res://scenes/objects/extension_cord_pickup.tscn" id="6_ov1oi"]
+[ext_resource type="Texture2D" uid="uid://droeyh1o27gcw" path="res://assets/sprites/player sprite/character idle animation-Sheet.png" id="6_v42im"]
+[ext_resource type="Texture2D" uid="uid://m3ir1c1shhjw" path="res://assets/sprites/Props/p_ExtensionCord_Holding2.png" id="7_rn7t0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17p5i"]
 radius = 31.016125
 
 [sub_resource type="Animation" id="Animation_gfjak"]
 length = 0.001
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,10 +43,24 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
 
 [sub_resource type="Animation" id="Animation_tpg5x"]
 resource_name = "carry_idle"
+length = 1.2857143
 loop_mode = 1
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -47,10 +68,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45000002, 0.6, 0.75, 0.90000004, 1.0500001, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -59,10 +80,22 @@ tracks/1/path = NodePath("Sprite2D:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_npwbq")]
+"values": [ExtResource("5_v42im")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
 }
 
 [sub_resource type="Animation" id="Animation_c3xxp"]
@@ -94,10 +127,24 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 19, 19]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
 
 [sub_resource type="Animation" id="Animation_4kuee"]
 resource_name = "idle"
+length = 1.2857143
 loop_mode = 1
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -108,7 +155,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_gfjak")]
+"values": [ExtResource("6_v42im")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -117,10 +164,22 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45000002, 0.6, 0.75, 0.90000004, 1.0500001, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [10]
 }
 
 [sub_resource type="Animation" id="Animation_524rm"]
@@ -152,6 +211,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ExtResource("2_gfjak"), ExtResource("6_c3xxp")]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_524rm"]
 _data = {
@@ -166,13 +237,17 @@ _data = {
 script = ExtResource("1_gfjak")
 cotton_ball_scene = ExtResource("2_524rm")
 cotton_ball_texture = ExtResource("5_tpg5x")
+coffe_pot_scene = ExtResource("4_180ig")
+coffe_pot_texture = ExtResource("5_20koh")
+power_strip_scene = ExtResource("6_ov1oi")
+power_strip_texture = ExtResource("7_rn7t0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1249057989]
 texture_filter = 1
 position = Vector2(2.5, -1.5)
 scale = Vector2(5, 4.923)
 texture = ExtResource("2_gfjak")
-hframes = 20
+hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552064012]
 visible = false

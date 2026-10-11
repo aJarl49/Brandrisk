@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dqbqiit7xc4mq"]
+
+[ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_7oj0v"]
+[ext_resource type="Script" uid="uid://papxj2curv21" path="res://scripts/objects/extension_cord_pickup.gd" id="2_7oj0v"]
+[ext_resource type="Texture2D" uid="uid://mvrppaubaxry" path="res://assets/sprites/Props/p_ExtensionCord_InWall_OL2.png" id="4_hxbij"]
+[ext_resource type="Texture2D" uid="uid://dnppoeyvk4nyx" path="res://assets/sprites/Props/p_ExtensionCord_InWall2.png" id="5_lvuvb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5675"]
+
+[node name="InteractableObject" unique_id=1435307137 instance=ExtResource("1_7oj0v")]
+script = ExtResource("2_7oj0v")
+item_texture = ExtResource("5_lvuvb")
+normal_texture = ExtResource("5_lvuvb")
+highlighted_texture = ExtResource("4_hxbij")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1594366038]
+modulate = Color(1, 1, 1, 1)
+texture_filter = 1
+position = Vector2(-48.999992, -18.999992)
+scale = Vector2(5, 5)
+texture = ExtResource("5_lvuvb")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=68815441]
+shape = SubResource("CircleShape2D_h5675")
+
+[node name="InteractionArea" parent="." index="2" unique_id=81549059]
+visible = false
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

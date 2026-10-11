@@ -11,7 +11,7 @@ extends CharacterBody2D
 @export var cotton_ball_texture: Texture2D
 @export var coffe_pot_scene: PackedScene
 @export var coffe_pot_texture: Texture2D
-@export var power_strip_scene: Texture2D
+@export var power_strip_scene: PackedScene
 @export var power_strip_texture: Texture2D
 
 
