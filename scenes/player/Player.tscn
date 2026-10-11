@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://nlrs3jain8ua" path="res://scripts/player/Player.gd" id="1_gfjak"]
 [ext_resource type="PackedScene" uid="uid://hg3l2mwb5hg4" path="res://scenes/objects/cotton_ball_pickup.tscn" id="2_524rm"]
 [ext_resource type="Texture2D" uid="uid://d2gfjp6s1n5ru" path="res://assets/sprites/player sprite/C_pc_walking.png" id="2_gfjak"]
-[ext_resource type="Texture2D" uid="uid://dgk58caj78q1v" path="res://assets/sprites/player sprite/C_pc_holding.png" id="3_4kuee"]
 [ext_resource type="Texture2D" uid="uid://c3mrsuixdwh2c" path="res://assets/sprites/Props/p_cotton.png" id="5_tpg5x"]
+[ext_resource type="Texture2D" uid="uid://bqnx227vollnv" path="res://assets/sprites/player sprite/character walking with blink.png" id="6_c3xxp"]
+[ext_resource type="Texture2D" uid="uid://cc8bw3kv5k3tv" path="res://assets/sprites/player sprite/character carrying object with blinking.png" id="6_npwbq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17p5i"]
 radius = 31.016125
@@ -61,13 +62,14 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_4kuee")]
+"values": [ExtResource("6_npwbq")]
 }
 
 [sub_resource type="Animation" id="Animation_c3xxp"]
 resource_name = "carry_walking"
-length = 0.26666668
+length = 2.0
 loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,7 +80,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_4kuee")]
+"values": [ExtResource("6_npwbq")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -87,10 +89,10 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.23333335),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.06666667, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.6, 1.7, 1.8000001, 1.9, 2, 2.0666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 0, 1]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 19, 19]
 }
 
 [sub_resource type="Animation" id="Animation_4kuee"]
@@ -123,8 +125,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_524rm"]
 resource_name = "walking"
-length = 0.23333333
+length = 2.1
 loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -132,10 +135,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.03333333, 0.06666667, 0.13333334, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5, 0.6, 0.7, 0.8000001, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.6000001, 1.7, 1.8000001, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 0, 1]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -144,10 +147,10 @@ tracks/1/path = NodePath("Sprite2D:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(-0.033333335),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(-0.033333335, 0),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("2_gfjak")]
+"values": [ExtResource("2_gfjak"), ExtResource("6_c3xxp")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_524rm"]
@@ -169,7 +172,7 @@ texture_filter = 1
 position = Vector2(2.5, -1.5)
 scale = Vector2(5, 4.923)
 texture = ExtResource("2_gfjak")
-hframes = 2
+hframes = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552064012]
 visible = false
