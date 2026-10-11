@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://dc5fhb0g2k6fl" path="res://assets/audio/sfx/button_pressed.Pitch 7.wav" id="21_hanxw"]
 [ext_resource type="AudioStream" uid="uid://bkd7rs2ndup8o" path="res://assets/audio/sfx/button_pressed.Pitch 8.wav" id="22_7abb8"]
 [ext_resource type="AudioStream" uid="uid://lh3h4gsb6i62" path="res://assets/audio/sfx/button_pressed.Pitch 9.wav" id="23_ixmr7"]
+[ext_resource type="Texture2D" uid="uid://b4rwd373o0gw2" path="res://assets/sprites/Props/exit screen button.png" id="24_gnpap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpbui"]
 size = Vector2(28, 22)
@@ -32,6 +33,9 @@ size = Vector2(23, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qhxf"]
 size = Vector2(24, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7ije"]
+texture = ExtResource("24_gnpap")
 
 [node name="KeyPad-Minigame" type="Node2D" unique_id=1820981859]
 script = ExtResource("1_vpbui")
@@ -192,5 +196,6 @@ offset_left = 1056.0
 offset_top = 14.0
 offset_right = 1106.0
 offset_bottom = 59.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_d7ije")
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
