@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://de1v6h4kavnkt"]
+
+[ext_resource type="Script" uid="uid://bfw3qmqe56o40" path="res://scripts/managers/LevelManager.gd" id="1_f8inm"]
+[ext_resource type="PackedScene" uid="uid://dptmv8xx3wm4j" path="res://scenes/ui/hud_scene.tscn" id="2_5sp0r"]
+[ext_resource type="PackedScene" uid="uid://b1mj151tn8t8b" path="res://scenes/ui/game_over.tscn" id="3_6s1il"]
+[ext_resource type="PackedScene" uid="uid://bacjc3mtnbddo" path="res://scenes/levels/main.tscn" id="3_8jvhs"]
+[ext_resource type="PackedScene" uid="uid://cltmx6sr4mn25" path="res://scenes/levels/test_ai_robin.tscn" id="3_i8et6"]
+
+[node name="LevelManger" type="Node2D" unique_id=1035459651]
+script = ExtResource("1_f8inm")
+hud_scene = ExtResource("2_5sp0r")
+game_over_scene = ExtResource("3_6s1il")
+editor_scenes = Array[PackedScene]([ExtResource("3_8jvhs"), ExtResource("3_i8et6")])
