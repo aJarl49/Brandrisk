@@ -8,9 +8,6 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihgl4"]
 texture = ExtResource("3_ihgl4")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adf7y"]
-texture = ExtResource("3_ihgl4")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1ei0"]
 texture = ExtResource("3_ihgl4")
 
@@ -56,29 +53,12 @@ offset_bottom = 29.0
 theme_override_colors/font_color = Color(0.7026303, 0.16225499, 0.2642613, 1)
 text = "START"
 
-[node name="Button_settings" type="Button" parent="." unique_id=1473660600]
-anchors_preset = -1
-offset_left = 731.0
-offset_top = 437.0
-offset_right = 869.0
-offset_bottom = 473.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_adf7y")
-
-[node name="Label_settings" type="Label" parent="Button_settings" unique_id=527555835]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 5.0
-offset_right = 106.0
-offset_bottom = 28.0
-theme_override_colors/font_color = Color(0.7019608, 0.16078432, 0.2627451, 1)
-text = "SETTINGS"
-
 [node name="Button_credits" type="Button" parent="." unique_id=838753440]
 anchors_preset = -1
-offset_left = 281.0
-offset_top = 471.0
-offset_right = 419.0
-offset_bottom = 507.0
+offset_left = 508.0
+offset_top = 433.0
+offset_right = 646.0
+offset_bottom = 469.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_a1ei0")
 
 [node name="Label" type="Label" parent="Button_credits" unique_id=472240820]
@@ -92,22 +72,21 @@ text = "CREDITS"
 
 [node name="Button_quit" type="Button" parent="." unique_id=2126648466]
 anchors_preset = -1
-offset_left = 732.0
-offset_top = 480.0
-offset_right = 870.0
-offset_bottom = 516.0
+offset_left = 731.0
+offset_top = 433.0
+offset_right = 869.0
+offset_bottom = 469.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_a3st5")
 
 [node name="Label_quit" type="Label" parent="Button_quit" unique_id=676133913]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 5.0
-offset_right = 116.0
-offset_bottom = 28.0
+offset_left = 51.0
+offset_top = 6.0
+offset_right = 123.0
+offset_bottom = 29.0
 theme_override_colors/font_color = Color(0.7019608, 0.16078432, 0.2627451, 1)
 text = "QUIT"
 
 [connection signal="pressed" from="Button_start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Button_settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Button_credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Button_quit" to="." method="_on_quit_pressed"]
