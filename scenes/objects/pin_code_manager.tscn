@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c5nj08dod83ab"]
+
+[ext_resource type="Script" uid="uid://b8a7wgnvoscog" path="res://pin_code_manager.gd" id="1_rdrjh"]
+
+[node name="PinCodeManager" type="Node" unique_id=1295839408]
+script = ExtResource("1_rdrjh")

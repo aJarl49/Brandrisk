@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://ccy2whpoikl4r"]
+
+[ext_resource type="Script" uid="uid://bwoe255lr4m7c" path="res://scenes/objects/key_pad_minigame.gd" id="1_vpbui"]
+[ext_resource type="Texture2D" uid="uid://cyi2nfdqi0han" path="res://assets/sprites/Backgrounds/Keypad_Background.png" id="1_xx8li"]
+[ext_resource type="Texture2D" uid="uid://dsqi0bfr3ygc8" path="res://assets/sprites/Props/p_keypad_0.png" id="2_qk8pe"]
+[ext_resource type="Texture2D" uid="uid://bixaemw828482" path="res://assets/sprites/Props/p_keypad_1.png" id="3_6plwr"]
+[ext_resource type="Texture2D" uid="uid://dyewea44chekp" path="res://assets/sprites/Props/p_keypad_2.png" id="4_qv3gq"]
+[ext_resource type="Texture2D" uid="uid://b2clmax6bl2ek" path="res://assets/sprites/Props/p_keypad_3.png" id="5_vpbui"]
+[ext_resource type="Texture2D" uid="uid://dd8ddqmfxmg01" path="res://assets/sprites/Props/p_keypad_4.png" id="6_7qhxf"]
+[ext_resource type="Texture2D" uid="uid://cxmsicaiqtons" path="res://assets/sprites/Props/p_keypad_5.png" id="7_dnymx"]
+[ext_resource type="Texture2D" uid="uid://cvons7pakiofs" path="res://assets/sprites/Props/p_keypad_6.png" id="8_tnsbf"]
+[ext_resource type="Texture2D" uid="uid://jj844f27j6ud" path="res://assets/sprites/Props/p_keypad_7.png" id="9_88ykn"]
+[ext_resource type="Texture2D" uid="uid://dgdxuh6ys3snm" path="res://assets/sprites/Props/p_keypad_8.png" id="10_ps5kb"]
+[ext_resource type="Texture2D" uid="uid://loi72i7sjxxa" path="res://assets/sprites/Props/p_keypad_9.png" id="11_wjcxx"]
+[ext_resource type="Script" uid="uid://tpo0epfbo834" path="res://scenes/objects/keypad_button.gd" id="12_qv3gq"]
+[ext_resource type="AudioStream" uid="uid://w7x8hjvkaiqr" path="res://assets/audio/sfx/button_pressed.Pitch 0.wav" id="14_d7ije"]
+[ext_resource type="AudioStream" uid="uid://cs1f2oyyfdd7m" path="res://assets/audio/sfx/button_pressed.Pitch 1.wav" id="15_gnpap"]
+[ext_resource type="AudioStream" uid="uid://ctkhi7ceitmoh" path="res://assets/audio/sfx/button_pressed.Pitch 2.wav" id="16_mbh0n"]
+[ext_resource type="AudioStream" uid="uid://bt7thg7cgs8r0" path="res://assets/audio/sfx/button_pressed.Pitch 3.wav" id="17_qk3wp"]
+[ext_resource type="AudioStream" uid="uid://b3uvmg7ra4fte" path="res://assets/audio/sfx/button_pressed.Pitch 4.wav" id="18_hprbn"]
+[ext_resource type="AudioStream" uid="uid://b2rtvqbqmjqhc" path="res://assets/audio/sfx/button_pressed.Pitch 5.wav" id="19_3khno"]
+[ext_resource type="AudioStream" uid="uid://dpqck83r316tw" path="res://assets/audio/sfx/button_pressed.Pitch 6.wav" id="20_pts1h"]
+[ext_resource type="AudioStream" uid="uid://dc5fhb0g2k6fl" path="res://assets/audio/sfx/button_pressed.Pitch 7.wav" id="21_hanxw"]
+[ext_resource type="AudioStream" uid="uid://bkd7rs2ndup8o" path="res://assets/audio/sfx/button_pressed.Pitch 8.wav" id="22_7abb8"]
+[ext_resource type="AudioStream" uid="uid://lh3h4gsb6i62" path="res://assets/audio/sfx/button_pressed.Pitch 9.wav" id="23_ixmr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpbui"]
+size = Vector2(28, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnymx"]
+size = Vector2(23, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qhxf"]
+size = Vector2(24, 22)
+
+[node name="KeyPad-Minigame" type="Node2D" unique_id=1820981859]
+script = ExtResource("1_vpbui")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1993163888]
+
+[node name="KeypadBackground" type="Sprite2D" parent="." unique_id=134099962]
+texture_filter = 1
+position = Vector2(603, 349)
+scale = Vector2(2, 2)
+texture = ExtResource("1_xx8li")
+
+[node name="Keypad_button0" type="Area2D" parent="." unique_id=584393582]
+position = Vector2(358, 273)
+script = ExtResource("12_qv3gq")
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("14_d7ije")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button0" unique_id=11270864]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vpbui")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button0" unique_id=328620537]
+texture_filter = 1
+scale = Vector2(2, 2)
+
+[node name="Keypad_button1" type="Area2D" parent="." unique_id=1682163599]
+position = Vector2(310, 151)
+script = ExtResource("12_qv3gq")
+button_index = 1
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("15_gnpap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button1" unique_id=881653387]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_dnymx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button1" unique_id=1922291685]
+texture_filter = 1
+scale = Vector2(2, 2)
+
+[node name="Keypad_button2" type="Area2D" parent="." unique_id=934055730]
+position = Vector2(359, 151)
+script = ExtResource("12_qv3gq")
+button_index = 2
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("16_mbh0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button2" unique_id=230060286]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_dnymx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button2" unique_id=1610249382]
+texture_filter = 1
+scale = Vector2(2, 2)
+
+[node name="Keypad_button3" type="Area2D" parent="." unique_id=961524216]
+position = Vector2(407, 151)
+script = ExtResource("12_qv3gq")
+button_index = 3
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("17_qk3wp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button3" unique_id=1722297738]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_7qhxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button3" unique_id=1142176870]
+texture_filter = 1
+scale = Vector2(2, 2)
+
+[node name="Keypad_button4" type="Area2D" parent="." unique_id=1599505923]
+position = Vector2(310, 192)
+script = ExtResource("12_qv3gq")
+button_index = 4
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("18_hprbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button4" unique_id=1377422519]
+shape = SubResource("RectangleShape2D_7qhxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button4" unique_id=1944941508]
+texture_filter = 1
+scale = Vector2(2, 2)
+
+[node name="Keypad_button5" type="Area2D" parent="." unique_id=147985147]
+position = Vector2(359, 192)
+script = ExtResource("12_qv3gq")
+button_index = 5
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("19_3khno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button5" unique_id=457397408]
+shape = SubResource("RectangleShape2D_7qhxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button5" unique_id=520817579]
+texture_filter = 1
+scale = Vector2(2, 2)
+
+[node name="Keypad_button6" type="Area2D" parent="." unique_id=985587380]
+position = Vector2(407, 192)
+script = ExtResource("12_qv3gq")
+button_index = 6
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("20_pts1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button6" unique_id=856681260]
+shape = SubResource("RectangleShape2D_7qhxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button6" unique_id=2052200420]
+texture_filter = 1
+scale = Vector2(2, 2)
+
+[node name="Keypad_button7" type="Area2D" parent="." unique_id=988304674]
+position = Vector2(310, 233)
+script = ExtResource("12_qv3gq")
+button_index = 7
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("21_hanxw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button7" unique_id=531068585]
+shape = SubResource("RectangleShape2D_7qhxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button7" unique_id=1345474751]
+texture_filter = 1
+scale = Vector2(2, 2)
+
+[node name="Keypad_button8" type="Area2D" parent="." unique_id=1192324989]
+position = Vector2(358, 233)
+script = ExtResource("12_qv3gq")
+button_index = 8
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("22_7abb8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button8" unique_id=148976631]
+shape = SubResource("RectangleShape2D_7qhxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button8" unique_id=960266636]
+texture_filter = 1
+scale = Vector2(2, 2)
+
+[node name="Keypad_button9" type="Area2D" parent="." unique_id=15892171]
+position = Vector2(407, 233)
+script = ExtResource("12_qv3gq")
+button_index = 9
+button_textures = Array[Texture2D]([ExtResource("2_qk8pe"), ExtResource("3_6plwr"), ExtResource("4_qv3gq"), ExtResource("5_vpbui"), ExtResource("6_7qhxf"), ExtResource("7_dnymx"), ExtResource("8_tnsbf"), ExtResource("9_88ykn"), ExtResource("10_ps5kb"), ExtResource("11_wjcxx")])
+button_sound = ExtResource("23_ixmr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keypad_button9" unique_id=1198890235]
+shape = SubResource("RectangleShape2D_7qhxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad_button9" unique_id=1609869559]
+texture_filter = 1
+scale = Vector2(2, 2)
