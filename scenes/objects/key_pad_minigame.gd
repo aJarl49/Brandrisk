@@ -22,5 +22,5 @@ func register_press(number: int) -> void:
 		entered_code.clear()
 
 func _on_code_success() -> void:
-	# Put what happens when the keypad unlocks here
-	pass
+	await get_tree().create_timer(0.3).timeout
+	queue_free()
