@@ -1,52 +1,87 @@
 [gd_scene format=3 uid="uid://baawwgam7t445"]
 
-[sub_resource type="Animation" id="Animation_7dcit"]
+[ext_resource type="Texture2D" uid="uid://cbaf6eg5t21e5" path="res://assets/sprites/Props/schoolbuilding.png" id="1_i8df0"]
+[ext_resource type="Texture2D" uid="uid://c1uk11fkvkbqs" path="res://assets/sprites/Props/title.png" id="2_i2slu"]
+
+[sub_resource type="Animation" id="Animation_j6b1i"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:visible")
+tracks/0/path = NodePath("CanvasLayer/TextureRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer2/TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_i8df0"]
-resource_name = "new_animation"
+[sub_resource type="Animation" id="Animation_i5xbi"]
+resource_name = "intro"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:visible")
+tracks/0/path = NodePath("CanvasLayer/TextureRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.88),
+"times": PackedFloat32Array(0, 2.8333333),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer2/TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.81, 1.6, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2slu"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v38ad"]
 _data = {
-&"RESET": SubResource("Animation_7dcit"),
-&"new_animation": SubResource("Animation_i8df0")
+&"RESET": SubResource("Animation_j6b1i"),
+&"intro": SubResource("Animation_i5xbi")
 }
 
 [node name="intro" type="Node2D" unique_id=428474415]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1014744398]
-color = Color(0.60784316, 0.6392157, 1, 1)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=536642352]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1927122771]
-libraries/ = SubResource("AnimationLibrary_i2slu")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1649244838]
+offset_right = 1154.0
+offset_bottom = 647.0
+texture = ExtResource("1_i8df0")
 
-[node name="Label" type="Label" parent="." unique_id=324919851]
-offset_left = 440.0
-offset_top = 216.0
-offset_right = 703.0
-offset_bottom = 268.0
-text = "THIS IS INTRO"
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1651679868]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=1449495120]
+modulate = Color(1, 1, 1, 0)
+offset_left = 137.0
+offset_top = 105.0
+offset_right = 1066.0
+offset_bottom = 591.0
+texture = ExtResource("2_i2slu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1665502083]
+libraries/ = SubResource("AnimationLibrary_v38ad")

@@ -5,6 +5,8 @@ extends Node
 @export var credits: PackedScene = load("res://scenes/ui/credits.tscn")
 @export var start_screen: PackedScene = load ("res://scenes/ui/start_screen.tscn")
 @export var settings: PackedScene = load ("res://scenes/ui/settings.tscn")
+#@onready var intro_animation = preload("res://scenes/ui/intro.tscn").instantiate()
+#@onready var animation: AnimationPlayer = intro_animation.get_node("AnimatiomPlayer")
 
 	
 
@@ -22,7 +24,12 @@ func clear_current_screen():
 func show_intro():
 	current_screen = intro.instantiate()
 	add_child(current_screen)
-	await get_tree().create_timer(2.0).timeout
+	
+	var animation: AnimationPlayer = current_screen.get_node("AnimationPlayer")
+	animation.play("intro")
+#	add_child(intro_animation)
+#	animation.play("intro")
+	await get_tree().create_timer(3.0).timeout
 	show_start_screen()
 	
 func show_start_screen():
@@ -30,7 +37,6 @@ func show_start_screen():
 	current_screen = start_screen.instantiate()
 	add_child(current_screen)
 	current_screen.start_pressed.connect(_on_start_pressed)
-	current_screen.settings_pressed.connect(_on_settings_pressed)
 	current_screen.credits_pressed.connect(_on_credits_pressed)
 	current_screen.quit_pressed.connect(_on_quit_pressed)
 	print ("signal recieved")
@@ -38,11 +44,6 @@ func show_start_screen():
 func _on_start_pressed():
 	current_screen.queue_free()
 	start_loop()
-
-func _on_settings_pressed():
-	clear_current_screen()
-	current_screen = settings.instantiate()
-	add_child(current_screen)
 	
 func _on_credits_pressed():
 	clear_current_screen()
