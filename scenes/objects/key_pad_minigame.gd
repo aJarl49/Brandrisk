@@ -1,7 +1,9 @@
 extends Node2D
 
 @export var code_generator_node: Node
-var player = null
+signal keypad_minigame_successful
+signal keypad_minigame_failed
+
 
 var entered_code: Array[int] = []
 
@@ -17,13 +19,11 @@ func register_press(number: int) -> void:
 	if entered_code.size() == 4:
 		if entered_code == PinCodeManager.pin_code:
 			print("Code matched!")
-			_on_code_success()
+			keypad_minigame_successful.emit()
 		else:
 			print("Wrong code! Resetting.")
 			
 		entered_code.clear()
 
-func _on_code_success() -> void:
-	await get_tree().create_timer(0.3).timeout
-	player.global_position.y -= 150
-	queue_free()
+func _on_exit_pressed() -> void:
+	keypad_minigame_failed.emit()
