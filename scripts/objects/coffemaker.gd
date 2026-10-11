@@ -56,7 +56,7 @@ func _on_interact() -> void:
 		_update_sprite_visuals()
 		
 	elif not has_coffee_pot:
-		if player.inventory.get("cotton ball", false):
+		if player.inventory.get("cotton ball", true):
 			sprite_index = 2
 			interaction_area.action_name = "light the cotton ball"
 			
