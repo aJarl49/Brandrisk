@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://d2dedlx7be3jp"]
 
 [ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_xnrkm"]
-[ext_resource type="Script" uid="uid://dt7lltmfqskkv" path="res://scripts/objects/teddy_bear.gd" id="2_ou3j2"]
+[ext_resource type="Script" uid="uid://c8tt3hh718t1p" path="res://scripts/objects/stateful_object.gd" id="2_ou3j2"]
 [ext_resource type="Texture2D" uid="uid://67uthk44mwm8" path="res://assets/sprites/Props/p_teddybear_ripped.png" id="3_e17qi"]
 [ext_resource type="Texture2D" uid="uid://dt58l8laskp5s" path="res://assets/sprites/Props/p_teddybear.png" id="3_ou3j2"]
 [ext_resource type="Texture2D" uid="uid://gtvxqjyarty7" path="res://assets/sprites/Props/p_teddybear_OL.png" id="4_p5j7g"]
 [ext_resource type="Texture2D" uid="uid://bwp6jyjebo1p4" path="res://assets/sprites/Props/p_teddybear_ripped_OL.png" id="6_0cpst"]
 [ext_resource type="Texture2D" uid="uid://cqqm5ay4dwa6t" path="res://assets/sprites/Props/p_teddybear_emtied.png" id="7_lbmnx"]
+[ext_resource type="PackedScene" uid="uid://hg3l2mwb5hg4" path="res://scenes/objects/cotton_ball_pickup.tscn" id="8_2quih"]
 [ext_resource type="Texture2D" uid="uid://c3mrsuixdwh2c" path="res://assets/sprites/Props/p_cotton.png" id="8_lbmnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt5ay"]
@@ -15,12 +16,16 @@ size = Vector2(82, 20)
 [node name="TeddyBear" unique_id=1435307137 instance=ExtResource("1_xnrkm")]
 position = Vector2(218, 268)
 script = ExtResource("2_ou3j2")
-normal_texture = ExtResource("3_ou3j2")
-highlighted_texture = ExtResource("4_p5j7g")
-ripped_sprite = ExtResource("3_e17qi")
-highlighted_ripped_sprite = ExtResource("6_0cpst")
-emptied_sprite = ExtResource("7_lbmnx")
-cotton_ball = ExtResource("8_lbmnx")
+step1_action_text = "tear up the poor teddy bear"
+step1_normal_texture = ExtResource("3_ou3j2")
+step1_highlighted_texture = ExtResource("4_p5j7g")
+step2_action_text = "steal the flammable cotton innards.."
+step2_normal_texture = ExtResource("3_e17qi")
+step2_highlighted_texture = ExtResource("6_0cpst")
+step2_gives_item = "cotton ball"
+step2_gives_texture = ExtResource("8_lbmnx")
+step2_gives_drop_scene = ExtResource("8_2quih")
+final_texture = ExtResource("7_lbmnx")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1594366038]
 modulate = Color(1, 1, 1, 1)

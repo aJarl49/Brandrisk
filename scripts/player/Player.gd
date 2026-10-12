@@ -1,19 +1,15 @@
 extends CharacterBody2D
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-@onready var sprite = $Sprite2D
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var carried_item_sprite: Sprite2D = $CarriedItem
-@export var movement_speed: float = 200
+
+
+@export var movement_speed: float = 200.0
 @export var dash_speed: float = 600.0
 @export var dash_duration: float = 0.15
 @export var double_tap_time: float = 0.25
-@export var cotton_ball_scene: PackedScene
-@export var cotton_ball_texture: Texture2D
-@export var coffe_pot_scene: PackedScene
-@export var coffe_pot_texture: Texture2D
-@export var power_strip_scene: PackedScene
-@export var power_strip_texture: Texture2D
-
+@export var default_drop_scene: PackedScene
 
 var character_direction: Vector2 = Vector2.ZERO
 var last_tap_direction: Vector2 = Vector2.ZERO
@@ -22,11 +18,12 @@ var is_dashing: bool = false
 var dash_timer: float = 0.0
 var dash_direction: Vector2 = Vector2.ZERO
 
-var inventory = {
-	"cotton ball" : false,
-	"coffee pot" : false, 
-	"power strip" : false
-}
+var inventory: Dictionary = {}
+var held_item_id: String = ""
+var held_item_texture: Texture2D = null
+var held_drop_scene: PackedScene = null
+var held_normal_tex: Texture2D = null
+var held_highlight_tex: Texture2D = null
 
 func _ready() -> void:
 	update_animation("idle")
@@ -48,7 +45,6 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	var tap_direction := Vector2.ZERO
-
 	if Input.is_action_just_pressed("move_right"):
 		tap_direction = Vector2.RIGHT
 	elif Input.is_action_just_pressed("move_left"):
@@ -70,7 +66,6 @@ func _physics_process(delta: float) -> void:
 	if character_direction != Vector2.ZERO:
 		velocity = character_direction * movement_speed
 		update_animation("walking")
-			
 		if character_direction.x > 0:
 			sprite.flip_h = true
 		elif character_direction.x < 0:
@@ -88,64 +83,59 @@ func start_dash(dir: Vector2) -> void:
 	tap_timer = 0.0
 
 func is_carrying_anything() -> bool:
-	for item_name in inventory:
-		if inventory[item_name] == true:
-			
-			return true
-	return false
+	return held_item_id != ""
+
+func pick_up_item(item_id: String, item_tex: Texture2D, drop_scene: PackedScene = null, normal_tex: Texture2D = null, highlight_tex: Texture2D = null) -> void:
+	held_item_id = item_id
+	held_item_texture = item_tex
+	held_drop_scene = drop_scene if drop_scene else default_drop_scene
+	held_normal_tex = normal_tex
+	held_highlight_tex = highlight_tex
+	
+	inventory[item_id] = true
+	carried_item_sprite.texture = item_tex
+		
+	update_animation("idle" if character_direction == Vector2.ZERO else "walking")
+
+func consume_held_item() -> void:
+	if held_item_id != "":
+		inventory[held_item_id] = false
+	held_item_id = ""
+	held_item_texture = null
+	held_drop_scene = null
+	held_normal_tex = null
+	held_highlight_tex = null
+	carried_item_sprite.texture = null
+	update_animation("idle" if character_direction == Vector2.ZERO else "walking")
 
 func update_animation(base_anim: String) -> void:
 	var target_anim = base_anim
-	
 	if is_carrying_anything():
 		target_anim = "carry_" + base_anim
-		if inventory["cotton ball"] == true:
-			carried_item_sprite.texture = cotton_ball_texture
-		elif inventory["coffee pot"] == true:
-			carried_item_sprite.texture = coffe_pot_texture
-		elif inventory["power strip"] == true:
-			carried_item_sprite.texture = power_strip_texture
-			
+		carried_item_sprite.texture = held_item_texture
 		
 	if anim_player.current_animation != target_anim:
 		anim_player.play(target_anim)
-	
-	
 
 func drop_held_item() -> void:
-	var dropped_item_name = ""
-	
-	for item_name in inventory:
-		if inventory[item_name] == true:
-			dropped_item_name = item_name
-			inventory[item_name] = false
-			break 
-			
-	if dropped_item_name == "":
+	if not is_carrying_anything():
 		return
 		
-	print("Släppte: ", dropped_item_name)
-	
-	carried_item_sprite.texture = null
-	
-	var drop_instance = null
-	
-	if dropped_item_name == "cotton ball" and cotton_ball_scene:
-		drop_instance = cotton_ball_scene.instantiate()
-	elif dropped_item_name == "coffee pot" and coffe_pot_scene:
-		drop_instance = coffe_pot_scene.instantiate()
-	elif dropped_item_name == "power strip" and power_strip_scene:
-			drop_instance = power_strip_scene.instantiate()
-	if drop_instance:
+	var scene_to_spawn = held_drop_scene if held_drop_scene else default_drop_scene
+	if scene_to_spawn:
+		var drop_instance = scene_to_spawn.instantiate()
+		if "item_id" in drop_instance:
+			drop_instance.item_id = held_item_id
+			drop_instance.action_text = "pick up " + held_item_id
+			if held_item_texture:
+				drop_instance.item_texture = held_item_texture
+			if held_normal_tex:
+				drop_instance.normal_texture = held_normal_tex
+			if held_highlight_tex:
+				drop_instance.highlighted_texture = held_highlight_tex
+				
 		get_tree().current_scene.add_child(drop_instance)
-		
-		var drop_offset = Vector2(0, 10) 
-		if character_direction != Vector2.ZERO:
-			drop_offset = character_direction * 20
-			
+		var drop_offset = character_direction * 20 if character_direction != Vector2.ZERO else Vector2(0, 10)
 		drop_instance.global_position = global_position + drop_offset
 
-	if character_direction != Vector2.ZERO:
-		update_animation("walking")
-	else:
-		update_animation("idle")
+	consume_held_item()

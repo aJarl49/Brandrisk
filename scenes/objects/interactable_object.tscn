@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://bu21j7lndej78"]
 
-[ext_resource type="Script" uid="uid://botwo5wfu78ql" path="res://scripts/objects/interactable_object.gd" id="1_l5qbn"]
-[ext_resource type="Texture2D" uid="uid://o81o2ftitodj" path="res://icon.svg" id="2_6mt4k"]
+[ext_resource type="Script" uid="uid://c8tt3hh718t1p" path="res://scripts/objects/stateful_object.gd" id="1_6ey0n"]
+[ext_resource type="Texture2D" uid="uid://ge5ilclykpkk" path="res://icon.svg" id="2_6mt4k"]
 [ext_resource type="PackedScene" uid="uid://csmdvwafcrw70" path="res://scenes/objects/interaction_area.tscn" id="3_khvpu"]
 
 [node name="InteractableObject" type="StaticBody2D" unique_id=1435307137]
-script = ExtResource("1_l5qbn")
+script = ExtResource("1_6ey0n")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1594366038]
-modulate = Color(1, 0.047058824, 1, 1)
 texture = ExtResource("2_6mt4k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=68815441]
