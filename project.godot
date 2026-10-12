@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 InteractManager="*uid://c8srdgy6n6u6s"
 AudioStreamPlayerGlobal="*uid://c7f4d0rgmso3m"
 PinCodeManager="*uid://b8a7wgnvoscog"
+LevelManager="*uid://bfw3qmqe56o40"
 
 [display]
 
