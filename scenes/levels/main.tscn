@@ -11,17 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://b0brvk3ef8w4j" path="res://assets/sprites/Props/p_teacherdesk.png" id="8_vkq25"]
 [ext_resource type="Texture2D" uid="uid://brmahmsllynq0" path="res://assets/sprites/Props/p_computer_backside.png" id="9_7lrji"]
 [ext_resource type="PackedScene" uid="uid://dlxnmki5sn0cr" path="res://scenes/objects/mute_button.tscn" id="11_hwp66"]
-[ext_resource type="PackedScene" uid="uid://ch6nl53gnofgm" path="res://scenes/enemies/test_teacher.tscn" id="12_2xkjh"]
-[ext_resource type="AudioStream" uid="uid://w7x8hjvkaiqr" path="res://assets/audio/sfx/button_pressed.Pitch 0.wav" id="13_qy6q0"]
-[ext_resource type="AudioStream" uid="uid://cs1f2oyyfdd7m" path="res://assets/audio/sfx/button_pressed.Pitch 1.wav" id="14_ykry0"]
-[ext_resource type="AudioStream" uid="uid://ctkhi7ceitmoh" path="res://assets/audio/sfx/button_pressed.Pitch 2.wav" id="15_im81g"]
-[ext_resource type="AudioStream" uid="uid://bt7thg7cgs8r0" path="res://assets/audio/sfx/button_pressed.Pitch 3.wav" id="16_ysjpo"]
-[ext_resource type="AudioStream" uid="uid://b3uvmg7ra4fte" path="res://assets/audio/sfx/button_pressed.Pitch 4.wav" id="17_gexqn"]
-[ext_resource type="AudioStream" uid="uid://b2rtvqbqmjqhc" path="res://assets/audio/sfx/button_pressed.Pitch 5.wav" id="18_kc8j3"]
-[ext_resource type="AudioStream" uid="uid://dpqck83r316tw" path="res://assets/audio/sfx/button_pressed.Pitch 6.wav" id="19_e5eww"]
-[ext_resource type="AudioStream" uid="uid://dc5fhb0g2k6fl" path="res://assets/audio/sfx/button_pressed.Pitch 7.wav" id="20_ygu70"]
-[ext_resource type="AudioStream" uid="uid://bkd7rs2ndup8o" path="res://assets/audio/sfx/button_pressed.Pitch 8.wav" id="21_x5gqu"]
-[ext_resource type="AudioStream" uid="uid://lh3h4gsb6i62" path="res://assets/audio/sfx/button_pressed.Pitch 9.wav" id="22_8qayg"]
 [ext_resource type="PackedScene" uid="uid://v1hvwhlfbhj4" path="res://scenes/objects/interactable_pc.tscn" id="23_ykry0"]
 [ext_resource type="PackedScene" uid="uid://h16x5blcdftf" path="res://scenes/objects/extension_cord.tscn" id="24_ysjpo"]
 [ext_resource type="PackedScene" uid="uid://bviolqye1fdqs" path="res://scenes/objects/WallOutlet.tscn" id="25_gexqn"]
@@ -1176,7 +1165,3 @@ offset_left = 1033.0
 offset_top = -19.0
 offset_right = 1073.0
 offset_bottom = 21.0
-
-[node name="TestTeacher" parent="CanvasLayer" unique_id=1209084858 instance=ExtResource("12_2xkjh")]
-position = Vector2(-1437, -935)
-pin_code_sounds = Array[AudioStreamWAV]([ExtResource("13_qy6q0"), ExtResource("14_ykry0"), ExtResource("15_im81g"), ExtResource("16_ysjpo"), ExtResource("17_gexqn"), ExtResource("18_kc8j3"), ExtResource("19_e5eww"), ExtResource("20_ygu70"), ExtResource("21_x5gqu"), ExtResource("22_8qayg")])
