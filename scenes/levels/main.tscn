@@ -1162,6 +1162,6 @@ position = Vector2(-2682, -520)
 
 [node name="MuteButton" parent="CanvasLayer" unique_id=959389631 instance=ExtResource("11_hwp66")]
 offset_left = 1033.0
-offset_top = -19.0
+offset_top = 119.0
 offset_right = 1073.0
-offset_bottom = 21.0
+offset_bottom = 159.0

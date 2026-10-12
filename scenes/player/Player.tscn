@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://nlrs3jain8ua" path="res://scripts/player/Player.gd" id="1_gfjak"]
 [ext_resource type="Texture2D" uid="uid://d2gfjp6s1n5ru" path="res://assets/sprites/player sprite/C_pc_walking.png" id="2_gfjak"]
 [ext_resource type="Texture2D" uid="uid://d2cwlg7t14u7k" path="res://assets/sprites/player sprite/character idle animation holding-Sheet.png" id="5_v42im"]
-[ext_resource type="Texture2D" uid="uid://bqnx227vollnv" path="res://assets/sprites/player sprite/character walking with blink.png" id="6_c3xxp"]
-[ext_resource type="Texture2D" uid="uid://cc8bw3kv5k3tv" path="res://assets/sprites/player sprite/character carrying object with blinking.png" id="6_npwbq"]
+[ext_resource type="Texture2D" uid="uid://wweqflpjox72" path="res://assets/sprites/player sprite/character walking with blink.png" id="6_c3xxp"]
+[ext_resource type="Texture2D" uid="uid://dotnh8hd5guhe" path="res://assets/sprites/player sprite/character carrying object with blinking.png" id="6_npwbq"]
 [ext_resource type="Texture2D" uid="uid://droeyh1o27gcw" path="res://assets/sprites/player sprite/character idle animation-Sheet.png" id="6_v42im"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17p5i"]
@@ -248,6 +248,7 @@ shape = SubResource("CircleShape2D_17p5i")
 [node name="Timer" type="Timer" parent="." unique_id=216323226]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1904177458]
+zoom = Vector2(0.75, 0.75)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=936447202]
 libraries/ = SubResource("AnimationLibrary_524rm")
