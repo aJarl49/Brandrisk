@@ -23,6 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://bkd7rs2ndup8o" path="res://assets/audio/sfx/button_pressed.Pitch 8.wav" id="21_x5gqu"]
 [ext_resource type="AudioStream" uid="uid://lh3h4gsb6i62" path="res://assets/audio/sfx/button_pressed.Pitch 9.wav" id="22_8qayg"]
 [ext_resource type="PackedScene" uid="uid://v1hvwhlfbhj4" path="res://scenes/objects/interactable_pc.tscn" id="23_ykry0"]
+[ext_resource type="PackedScene" uid="uid://h16x5blcdftf" path="res://scenes/objects/extension_cord.tscn" id="24_ysjpo"]
+[ext_resource type="PackedScene" uid="uid://bviolqye1fdqs" path="res://scenes/objects/WallOutlet.tscn" id="25_gexqn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6bv0"]
 texture = ExtResource("4_j4d2a")
@@ -1145,16 +1147,27 @@ position = Vector2(-2429, -2267.0002)
 scale = Vector2(5, 5)
 texture = ExtResource("9_7lrji")
 
-[node name="Coffemaker2" parent="." unique_id=1603030687 instance=ExtResource("3_y0acb")]
+[node name="Coffemaker" parent="." unique_id=1603030687 instance=ExtResource("3_y0acb")]
 z_index = 2
 position = Vector2(-231, -2342)
 
-[node name="TeddyBear2" parent="." unique_id=510413137 instance=ExtResource("2_2vj2h")]
+[node name="TeddyBear" parent="." unique_id=510413137 instance=ExtResource("2_2vj2h")]
 z_index = 2
 position = Vector2(-470, -499)
 
 [node name="Keypad" parent="." unique_id=803994468 instance=ExtResource("4_u81e1")]
 position = Vector2(-2610, -1270)
+
+[node name="TeacherPC" parent="." unique_id=1435307137 instance=ExtResource("23_ykry0")]
+position = Vector2(-2428, -2265)
+
+[node name="ExtensionCord" parent="." unique_id=1900738036 instance=ExtResource("24_ysjpo")]
+z_index = 5
+position = Vector2(-2272, -562)
+
+[node name="InteractableObject" parent="." unique_id=890895410 instance=ExtResource("25_gexqn")]
+z_index = 2
+position = Vector2(-2682, -520)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=254037404]
 
@@ -1167,6 +1180,3 @@ offset_bottom = 21.0
 [node name="TestTeacher" parent="CanvasLayer" unique_id=1209084858 instance=ExtResource("12_2xkjh")]
 position = Vector2(-1437, -935)
 pin_code_sounds = Array[AudioStreamWAV]([ExtResource("13_qy6q0"), ExtResource("14_ykry0"), ExtResource("15_im81g"), ExtResource("16_ysjpo"), ExtResource("17_gexqn"), ExtResource("18_kc8j3"), ExtResource("19_e5eww"), ExtResource("20_ygu70"), ExtResource("21_x5gqu"), ExtResource("22_8qayg")])
-
-[node name="InteractableObject" parent="CanvasLayer" unique_id=1435307137 instance=ExtResource("23_ykry0")]
-position = Vector2(-2428, -2265)

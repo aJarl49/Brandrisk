@@ -16,4 +16,5 @@ enable_step_2 = false
 finish_spawn_offset = Vector2(-10, 5)
 
 [node name="Sprite2D" parent="." index="0" unique_id=1594366038]
+scale = Vector2(5, 5)
 texture = ExtResource("2_7cusu")
