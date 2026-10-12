@@ -3,27 +3,22 @@ extends Node
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var label = $Label
 
-
-func _ready() -> void:
-	print("InteractManager Initialized")
-	
-	
-
-
-
 const base_text = "[E] to "
 var active_areas = []
 var can_interact = true
 
-func register_area(area: InteractionArea):
+func _ready() -> void:
+	print("InteractManager Initialized")
+
+func register_area(area: InteractionArea) -> void:
 	active_areas.push_back(area)
 	
-func unregister_area(area: InteractionArea):
+func unregister_area(area: InteractionArea) -> void:
 	var index = active_areas.find(area)
 	if index != -1:
 		active_areas.remove_at(index)
 	
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if active_areas.size() > 0 and can_interact:
 		active_areas.sort_custom(_sort_by_distance)
 		label.text = base_text + active_areas[0].action_name
@@ -34,12 +29,16 @@ func _process(_delta):
 	else:
 		label.hide()
 	
-func _sort_by_distance(area1, area2):
+func _sort_by_distance(area1, area2) -> bool:
+	if not is_instance_valid(player):
+		player = get_tree().get_first_node_in_group("player")
+	if not player:
+		return false
 	var d1 = player.global_position.distance_to(area1.global_position)
 	var d2 = player.global_position.distance_to(area2.global_position)
 	return d1 < d2
 
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact and active_areas.size() > 0:
 		can_interact = false
 		label.hide()

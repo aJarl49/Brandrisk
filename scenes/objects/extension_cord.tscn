@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://h16x5blcdftf"]
+
+[ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_aalk2"]
+[ext_resource type="Texture2D" uid="uid://m3ir1c1shhjw" path="res://assets/sprites/Props/p_ExtensionCord_Holding2.png" id="2_7cusu"]
+[ext_resource type="Texture2D" uid="uid://b0dvnaek1x1i6" path="res://assets/sprites/Props/p_ExtensionCord_Holding_OL2.png" id="3_l0s1l"]
+[ext_resource type="PackedScene" uid="uid://dqbqiit7xc4mq" path="res://scenes/objects/extension_cord_pickup.tscn" id="4_7cusu"]
+
+[node name="InteractableObject" unique_id=1435307137 instance=ExtResource("1_aalk2")]
+step1_action_text = "pick up power strip"
+step1_normal_texture = ExtResource("2_7cusu")
+step1_highlighted_texture = ExtResource("3_l0s1l")
+step1_gives_item = "power strip"
+step1_gives_texture = ExtResource("2_7cusu")
+step1_gives_drop_scene = ExtResource("4_7cusu")
+enable_step_2 = false
+finish_spawn_offset = Vector2(-10, 5)
+
+[node name="Sprite2D" parent="." index="0" unique_id=1594366038]
+texture = ExtResource("2_7cusu")

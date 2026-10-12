@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bjcfragyv4qkn"]
+
+[ext_resource type="PackedScene" uid="uid://c3v65y7ifi7qv" path="res://scenes/player/Player.tscn" id="2_116yx"]
+[ext_resource type="PackedScene" uid="uid://bjuayxbpju4u7" path="res://scenes/objects/coffemaker.tscn" id="3_116yx"]
+[ext_resource type="PackedScene" uid="uid://dqbqiit7xc4mq" path="res://scenes/objects/extension_cord_pickup.tscn" id="4_aqr7t"]
+[ext_resource type="PackedScene" uid="uid://d2dedlx7be3jp" path="res://scenes/objects/teddy_bear.tscn" id="4_cg3ua"]
+[ext_resource type="PackedScene" uid="uid://dlxnmki5sn0cr" path="res://scenes/objects/mute_button.tscn" id="6_psoid"]
+
+[node name="Interact_Test" type="Node2D" unique_id=1627900195]
+
+[node name="Player" parent="." unique_id=371344525 instance=ExtResource("2_116yx")]
+z_index = 1
+position = Vector2(469, 328)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1700003702]
+
+[node name="MuteButton" parent="CanvasLayer" unique_id=959389631 instance=ExtResource("6_psoid")]
+offset_left = 842.0
+offset_top = 3.0
+offset_right = 970.0
+offset_bottom = 131.0
+texture_pressed = null
+
+[node name="TeddyBear" parent="." unique_id=1603980121 instance=ExtResource("4_cg3ua")]
+position = Vector2(876, 444)
+
+[node name="Coffemaker" parent="." unique_id=1435307137 instance=ExtResource("3_116yx")]
+position = Vector2(140, 217)
+
+[node name="InteractableObject" parent="." unique_id=643529545 instance=ExtResource("4_aqr7t")]
+position = Vector2(341, 585)

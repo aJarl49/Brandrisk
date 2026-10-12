@@ -1,0 +1,1172 @@
+[gd_scene format=4 uid="uid://bacjc3mtnbddo"]
+
+[ext_resource type="PackedScene" uid="uid://c3v65y7ifi7qv" path="res://scenes/player/Player.tscn" id="1_2vj2h"]
+[ext_resource type="PackedScene" uid="uid://d2dedlx7be3jp" path="res://scenes/objects/teddy_bear.tscn" id="2_2vj2h"]
+[ext_resource type="PackedScene" uid="uid://bjuayxbpju4u7" path="res://scenes/objects/coffemaker.tscn" id="3_y0acb"]
+[ext_resource type="Texture2D" uid="uid://b0ec0f2051ygq" path="res://assets/sprites/TileMap/TileMap.png" id="4_j4d2a"]
+[ext_resource type="PackedScene" uid="uid://cf2grc8l85k53" path="res://scenes/objects/keypad.tscn" id="4_u81e1"]
+[ext_resource type="Texture2D" uid="uid://dmqp0xwumyphf" path="res://assets/sprites/TileMap/CollisionTiles.png" id="5_u81e1"]
+[ext_resource type="Texture2D" uid="uid://xwfi3724cmck" path="res://assets/sprites/Props/p_studentdesk.png" id="6_b6bv0"]
+[ext_resource type="Texture2D" uid="uid://bf1e37x57w0l7" path="res://assets/sprites/Props/p_studentchair.png" id="7_ubwgw"]
+[ext_resource type="Texture2D" uid="uid://b0brvk3ef8w4j" path="res://assets/sprites/Props/p_teacherdesk.png" id="8_vkq25"]
+[ext_resource type="Texture2D" uid="uid://brmahmsllynq0" path="res://assets/sprites/Props/p_computer_backside.png" id="9_7lrji"]
+[ext_resource type="PackedScene" uid="uid://dlxnmki5sn0cr" path="res://scenes/objects/mute_button.tscn" id="11_hwp66"]
+[ext_resource type="PackedScene" uid="uid://ch6nl53gnofgm" path="res://scenes/enemies/test_teacher.tscn" id="12_2xkjh"]
+[ext_resource type="AudioStream" uid="uid://w7x8hjvkaiqr" path="res://assets/audio/sfx/button_pressed.Pitch 0.wav" id="13_qy6q0"]
+[ext_resource type="AudioStream" uid="uid://cs1f2oyyfdd7m" path="res://assets/audio/sfx/button_pressed.Pitch 1.wav" id="14_ykry0"]
+[ext_resource type="AudioStream" uid="uid://ctkhi7ceitmoh" path="res://assets/audio/sfx/button_pressed.Pitch 2.wav" id="15_im81g"]
+[ext_resource type="AudioStream" uid="uid://bt7thg7cgs8r0" path="res://assets/audio/sfx/button_pressed.Pitch 3.wav" id="16_ysjpo"]
+[ext_resource type="AudioStream" uid="uid://b3uvmg7ra4fte" path="res://assets/audio/sfx/button_pressed.Pitch 4.wav" id="17_gexqn"]
+[ext_resource type="AudioStream" uid="uid://b2rtvqbqmjqhc" path="res://assets/audio/sfx/button_pressed.Pitch 5.wav" id="18_kc8j3"]
+[ext_resource type="AudioStream" uid="uid://dpqck83r316tw" path="res://assets/audio/sfx/button_pressed.Pitch 6.wav" id="19_e5eww"]
+[ext_resource type="AudioStream" uid="uid://dc5fhb0g2k6fl" path="res://assets/audio/sfx/button_pressed.Pitch 7.wav" id="20_ygu70"]
+[ext_resource type="AudioStream" uid="uid://bkd7rs2ndup8o" path="res://assets/audio/sfx/button_pressed.Pitch 8.wav" id="21_x5gqu"]
+[ext_resource type="AudioStream" uid="uid://lh3h4gsb6i62" path="res://assets/audio/sfx/button_pressed.Pitch 9.wav" id="22_8qayg"]
+[ext_resource type="PackedScene" uid="uid://v1hvwhlfbhj4" path="res://scenes/objects/interactable_pc.tscn" id="23_ykry0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6bv0"]
+texture = ExtResource("4_j4d2a")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+13:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+13:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+13:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j4d2a"]
+sources/0 = SubResource("TileSetAtlasSource_b6bv0")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u81e1"]
+texture = ExtResource("4_j4d2a")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+13:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+13:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+13:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ebgam"]
+sources/0 = SubResource("TileSetAtlasSource_u81e1")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkq25"]
+texture = ExtResource("4_j4d2a")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+13:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+13:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+13:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wkc12"]
+sources/0 = SubResource("TileSetAtlasSource_vkq25")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4d2a"]
+texture = ExtResource("4_j4d2a")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+13:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+13:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+13:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tsfue"]
+sources/0 = SubResource("TileSetAtlasSource_j4d2a")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ubwgw"]
+texture = ExtResource("5_u81e1")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.8631268, -8, -6.9443474)
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_48que"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ubwgw")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ebgam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebgam"]
+size = Vector2(27, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxt1f"]
+size = Vector2(36.800003, 18.600006)
+
+[node name="Main" type="Node2D" unique_id=800753564]
+
+[node name="TestPlayer" parent="." unique_id=371344525 instance=ExtResource("1_2vj2h")]
+z_index = 3
+position = Vector2(-2335, -1040)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=48320803]
+
+[node name="Floor" type="TileMapLayer" parent="Node2D" unique_id=1289661255]
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AADu//r/AAAAAAIAAADw//r/AAAAAAIAAADy//r/AAAAAAIAAADw//j/AAACAAIAAADw//b/AAACAAIAAADw//T/AAADAAIAAADy//T/AAACAAIAAAD0//T/AAACAAIAAAD4//T/AAACAAIAAAD8//T/AAACAAIAAAD6//T/AAADAAIAAAD+//T/AAADAAMAAAD2//T/AAADAAMAAADu/wIAAAABAAIAAADw//z/AAABAAIAAADy//7/AAABAAIAAAD0/wAAAAABAAIAAAD2/wIAAAABAAIAAADy/wIAAAABAAIAAAD4//7/AAABAAIAAAD6//z/AAABAAIAAAD+/wIAAAABAAIAAAD8/wAAAAABAAIAAAD8/wIAAAABAAIAAAD6/wAAAAAAAAMAAAD4/wAAAAAAAAMAAAD2//z/AAAAAAMAAAD2//r/AAAAAAMAAAD0//r/AAAAAAMAAAD6//r/AAAAAAMAAAD+//r/AAAAAAMAAAD+//z/AAAAAAMAAAD8//7/AAAAAAMAAAD6//7/AAAAAAIAAAD4//z/AAAAAAIAAAD4//r/AAAAAAIAAADy//z/AAAAAAIAAAD0//z/AAAAAAIAAADu//z/AAAAAAIAAADu//7/AAAAAAIAAADw//7/AAAAAAIAAADu/wAAAAAAAAIAAADw/wAAAAAAAAIAAADy/wAAAAAAAAIAAADw/wIAAAAAAAIAAAD0/wIAAAAAAAIAAAD0//7/AAAAAAIAAAD2//7/AAAAAAIAAAD2/wAAAAAAAAIAAAD4/wIAAAAAAAIAAAD6/wIAAAAAAAIAAAD+/wAAAAAAAAIAAAD+//7/AAAAAAIAAAD8//z/AAAAAAIAAAD8//r/AAAAAAIAAADu//L/AAADAAMAAADw//L/AAADAAMAAAD0//L/AAADAAIAAAD4//L/AAADAAIAAAD8//L/AAADAAIAAAD+//L/AAADAAMAAAD6//L/AAADAAMAAAD2//L/AAADAAMAAADy//L/AAADAAMAAADg//j/AAACAAIAAADc//r/AAABAAIAAADg//r/AAABAAIAAADi//z/AAABAAIAAADm/wAAAAABAAIAAADo//r/AAABAAIAAADg/wIAAAABAAIAAADc/wAAAAABAAIAAADg//7/AAABAAIAAADk/wAAAAABAAIAAADo/wIAAAAAAAIAAADo/wAAAAAAAAIAAADo//7/AAAAAAIAAADo//z/AAAAAAIAAADm//r/AAAAAAIAAADk//r/AAAAAAIAAADi//r/AAAAAAIAAADg//z/AAAAAAIAAADm//7/AAAAAAIAAADm//z/AAAAAAIAAADk//z/AAAAAAIAAADk//7/AAAAAAIAAADi//7/AAAAAAIAAADg/wAAAAAAAAIAAADe/wIAAAAAAAIAAADe//7/AAAAAAIAAADi/wIAAAAAAAMAAADi/wAAAAAAAAMAAADk/wIAAAAAAAMAAADm/wIAAAAAAAMAAADe/wAAAAAAAAMAAADc/wIAAAAAAAMAAADc//7/AAAAAAMAAADc//z/AAAAAAMAAADe//z/AAAAAAMAAADe//r/AAAAAAMAAADs//T/AAADAAMAAADg//L/AAADAAMAAADk//T/AAADAAMAAADo//L/AAADAAMAAADe//T/AAADAAMAAADs//L/AAADAAMAAADu//T/AAADAAIAAADo//T/AAADAAIAAADk//L/AAADAAIAAADi//T/AAADAAIAAADe//L/AAACAAIAAADc//L/AAACAAIAAADc//T/AAACAAIAAADg//T/AAACAAIAAADm//T/AAACAAMAAADi//L/AAACAAMAAADm//L/AAACAAMAAADq//L/AAACAAMAAADq//T/AAACAAMAAADg//b/AAACAAMAAADf/+T/AAAAAAIAAADf/+b/AAAAAAIAAADf/+j/AAABAAIAAADf/+r/AAAAAAIAAADf/+z/AAAAAAMAAADh/+T/AAABAAIAAADh/+b/AAAAAAMAAADh/+j/AAAAAAIAAADh/+r/AAAAAAMAAADh/+z/AAABAAIAAADj/+T/AAAAAAMAAADj/+b/AAAAAAIAAADj/+j/AAAAAAMAAADj/+r/AAABAAIAAADj/+z/AAAAAAIAAADl/+T/AAABAAIAAADl/+b/AAAAAAMAAADl/+j/AAAAAAIAAADl/+r/AAAAAAIAAADl/+z/AAABAAIAAADu/+T/AAABAAIAAADu/+b/AAAAAAIAAADu/+j/AAABAAIAAADu/+r/AAAAAAIAAADu/+z/AAAAAAMAAADw/+T/AAAAAAIAAADw/+b/AAAAAAIAAADw/+j/AAAAAAIAAADw/+r/AAABAAIAAADw/+z/AAAAAAMAAADy/+T/AAAAAAIAAADy/+b/AAAAAAIAAADy/+j/AAABAAIAAADy/+r/AAAAAAIAAADy/+z/AAAAAAMAAAD0/+T/AAAAAAIAAAD0/+b/AAAAAAMAAAD0/+j/AAAAAAIAAAD0/+r/AAAAAAMAAAD0/+z/AAAAAAIAAAD2/+T/AAABAAIAAAD2/+b/AAAAAAIAAAD2/+j/AAAAAAIAAAD2/+r/AAAAAAIAAAD2/+z/AAAAAAMAAAD4/+T/AAAAAAIAAAD4/+b/AAAAAAIAAAD4/+j/AAAAAAIAAAD4/+r/AAAAAAIAAAD4/+z/AAAAAAIAAAD6/+T/AAAAAAMAAAD6/+b/AAAAAAIAAAD6/+j/AAABAAIAAAD6/+r/AAABAAIAAAD6/+z/AAAAAAMAAAD8/+T/AAAAAAMAAAD8/+b/AAAAAAMAAAD8/+j/AAAAAAIAAAD8/+r/AAAAAAMAAAD8/+z/AAAAAAIAAAD+/+T/AAAAAAMAAAD+/+b/AAAAAAMAAAD+/+j/AAAAAAMAAAD+/+r/AAAAAAIAAAD+/+z/AAAAAAMAAADw//D/AAAAAAIAAADw/+7/AAABAAIAAADq//b/AAACAAIAAADs//j/AAACAAIAAADq//j/AAADAAIAAADs//b/AAACAAMAAAA=")
+tile_set = SubResource("TileSet_j4d2a")
+
+[node name="Wall" type="TileMapLayer" parent="Node2D" unique_id=223799755]
+z_index = 1
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAD//wIAAAAGAAEAAAD//wAAAAAGAAEAAAD///7/AAAGAAEAAAD///z/AAAGAAEAAAD///r/AAAGAAEAAAD//wMAAAAGAAIAAAD9/wMAAAAFAAIAAAD7/wMAAAAFAAIAAAD5/wMAAAAFAAIAAAD3/wMAAAAFAAIAAAD1/wMAAAAFAAIAAADz/wMAAAAFAAIAAADx/wMAAAAFAAIAAADv/wMAAAAFAAIAAADt/wMAAAAEAAIAAADt/wEAAAAEAAEAAADt////AAAEAAEAAADt//3/AAAEAAEAAADt//v/AAAEAAEAAADt//n/AAAEAAEAAADp/wMAAAAGAAIAAADb/wMAAAAEAAIAAADp//n/AAAGAAEAAADp//v/AAAGAAEAAADp//3/AAAGAAEAAADp////AAAGAAEAAADp/wEAAAAGAAEAAADn/wMAAAAFAAIAAADl/wMAAAAFAAIAAADj/wMAAAAFAAIAAADh/wMAAAAFAAIAAADf/wMAAAAFAAIAAADd/wMAAAAFAAIAAADb/wEAAAAEAAEAAADb////AAAEAAEAAADb//3/AAAEAAEAAADb//v/AAAEAAEAAADe/9//AAAEAAAAAADe/+H/AAAEAAEAAADe/+P/AAAEAAEAAADe/+X/AAAEAAEAAADe/+f/AAAEAAEAAADe/+n/AAAEAAEAAADe/+v/AAAEAAEAAADf/+D/AAAAAAAAAADf/+L/AAABAAEAAADg/9//AAAFAAAAAADh/+D/AAAAAAAAAADh/+L/AAAAAAEAAADi/9//AAAFAAAAAADj/+D/AAAAAAAAAADj/+L/AAAAAAEAAADk/9//AAAFAAAAAADl/+D/AAAAAAAAAADl/+L/AAAAAAEAAADm/9//AAAGAAAAAADm/+H/AAAGAAEAAADm/+P/AAAGAAEAAADm/+X/AAAGAAEAAADm/+f/AAAGAAEAAADm/+n/AAAGAAEAAADm/+v/AAAGAAEAAADt/9//AAAEAAAAAADt/+H/AAAEAAEAAADt/+P/AAAEAAEAAADt/+X/AAAEAAEAAADt/+f/AAAEAAEAAADt/+n/AAAEAAEAAADt/+v/AAAEAAEAAADu/+D/AAABAAAAAADu/+L/AAABAAEAAADv/9//AAAFAAAAAADw/+D/AAABAAAAAADw/+L/AAABAAEAAADx/9//AAAFAAAAAADy/+D/AAABAAAAAADy/+L/AAAAAAEAAADz/9//AAAFAAAAAAD0/+D/AAABAAAAAAD0/+L/AAAAAAEAAAD1/9//AAAFAAAAAAD2/+D/AAABAAAAAAD2/+L/AAABAAEAAAD3/9//AAAFAAAAAAD4/+D/AAABAAAAAAD4/+L/AAAAAAEAAAD5/9//AAAFAAAAAAD6/+D/AAABAAAAAAD6/+L/AAABAAEAAAD7/9//AAAFAAAAAAD8/+D/AAABAAAAAAD8/+L/AAAAAAEAAAD9/9//AAAFAAAAAAD+/+D/AAABAAAAAAD+/+L/AAABAAEAAAD//9//AAAGAAAAAAD//+H/AAAGAAEAAAD//+P/AAAGAAEAAAD//+X/AAAGAAEAAAD//+f/AAAGAAEAAAD//+n/AAAGAAEAAAD//+v/AAAGAAEAAADm/+3/AAAGAAIAAADe/+3/AAAEAAIAAAD//+3/AAAGAAEAAAD+/+3/AAAFAAAAAAD8/+3/AAAFAAAAAAD6/+3/AAAFAAAAAAD4/+3/AAAFAAAAAAD2/+3/AAAFAAAAAAD0/+3/AAAFAAAAAADv/+3/AAAGAAAAAADx/+3/AAAEAAAAAADz/+3/AAAFAAAAAADt/+3/AAAEAAIAAADu/+3/AAAFAAAAAADl/+3/AAAFAAAAAADf/+3/AAAFAAAAAADh/+3/AAAFAAAAAADj/+3/AAAFAAAAAADd/+3/AAAFAAAAAADb/+3/AAAEAAAAAADq//n/AAAFAAAAAADs//n/AAAFAAAAAADb//n/AAAEAAEAAADc//j/AAAAAAEAAADe//j/AAAAAAEAAADi//j/AAAAAAEAAADk//j/AAAAAAEAAADm//j/AAAAAAEAAADo//j/AAAAAAEAAADu//j/AAAAAAEAAADy//j/AAAAAAEAAAD0//j/AAAAAAEAAAD2//j/AAAAAAEAAAD4//j/AAAAAAEAAAD6//j/AAAAAAEAAAD8//j/AAAAAAEAAAD+//j/AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_ebgam")
+
+[node name="WallDown" type="TileMapLayer" parent="Node2D" unique_id=353491392]
+z_index = 3
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AADb//X/AAAEAAAAAADb//f/AAAEAAEAAADb//n/AAAEAAEAAADc//b/AAAAAAAAAADd//X/AAAFAAAAAADe//b/AAAAAAAAAADf//X/AAAGAAAAAADf//b/AAAGAAEAAADf//j/AAAGAAEAAADh//X/AAAEAAAAAADh//b/AAAEAAEAAADh//j/AAAEAAEAAADi//b/AAAAAAAAAADj//X/AAAFAAAAAADk//b/AAAAAAAAAADl//X/AAAFAAAAAADm//b/AAABAAAAAADn//X/AAAFAAAAAADo//b/AAAAAAAAAADp//X/AAAGAAAAAADp//f/AAAGAAEAAADp//n/AAAGAAEAAADq//n/AAAFAAAAAADs//n/AAAFAAAAAADt//X/AAAEAAAAAADt//f/AAAEAAEAAADt//n/AAAEAAEAAADu//b/AAABAAAAAADv//X/AAAGAAAAAADv//b/AAAGAAEAAADv//f/AAAGAAEAAADv//j/AAAGAAEAAADx//X/AAAEAAAAAADx//b/AAAEAAEAAADx//j/AAAEAAEAAADy//b/AAAAAAAAAADz//X/AAAFAAAAAAD0//b/AAABAAAAAAD1//X/AAAFAAAAAAD2//b/AAABAAAAAAD3//X/AAAFAAAAAAD4//b/AAAAAAAAAAD5//X/AAAFAAAAAAD6//b/AAAAAAAAAAD7//X/AAAFAAAAAAD8//b/AAAAAAAAAAD9//X/AAAFAAAAAAD+//b/AAAAAAAAAAD///X/AAAGAAAAAAD///b/AAAGAAEAAAD///j/AAAGAAEAAADb/+3/AAAEAAAAAADb/+//AAAEAAEAAADb//H/AAAEAAEAAADb//P/AAAEAAEAAADb//T/AAAEAAEAAADc/+7/AAAAAAAAAADc//D/AAAAAAEAAADd/+3/AAAFAAAAAADe/+3/AAAEAAIAAADe/+7/AAAAAAAAAADe//D/AAAAAAEAAADf/+3/AAAFAAAAAADg/+7/AAABAAAAAADg//D/AAAAAAEAAADh/+3/AAAFAAAAAADi/+7/AAAAAAAAAADi//D/AAAAAAEAAADj/+3/AAAFAAAAAADk/+7/AAAAAAAAAADk//D/AAAAAAEAAADl/+3/AAAFAAAAAADm/+3/AAAGAAIAAADm/+7/AAAAAAAAAADm//D/AAAAAAEAAADo/+7/AAAAAAAAAADo//D/AAABAAEAAADq/+7/AAABAAAAAADq//D/AAAAAAEAAADs/+7/AAAAAAAAAADs//D/AAABAAEAAADt/+3/AAAEAAIAAADt/+7/AAAAAAAAAADu/+3/AAAFAAAAAADu/+7/AAAAAAAAAADu//D/AAAAAAEAAADv/+3/AAAGAAAAAADv/+//AAAGAAEAAADv//D/AAAGAAEAAADx/+3/AAAEAAAAAADx/+//AAAEAAEAAADx//D/AAAEAAEAAADy/+7/AAAAAAAAAADy//D/AAAAAAEAAADz/+3/AAAFAAAAAAD0/+3/AAAFAAAAAAD0/+7/AAAAAAAAAAD0//D/AAABAAEAAAD2/+3/AAAFAAAAAAD2/+7/AAAAAAAAAAD2//D/AAAAAAEAAAD4/+3/AAAFAAAAAAD4/+7/AAABAAAAAAD4//D/AAABAAEAAAD6/+3/AAAFAAAAAAD6/+7/AAAAAAAAAAD6//D/AAABAAEAAAD8/+3/AAAFAAAAAAD8/+7/AAABAAAAAAD8//D/AAAAAAEAAAD+/+3/AAAFAAAAAAD+/+7/AAAAAAAAAAD+//D/AAABAAEAAAD//+3/AAAGAAEAAAD//+//AAAGAAEAAAD///H/AAAGAAEAAAD///P/AAAGAAEAAAD///T/AAAGAAEAAAA=")
+tile_set = SubResource("TileSet_wkc12")
+
+[node name="Decor" type="TileMapLayer" parent="Node2D" unique_id=918504822]
+z_index = 4
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AADy//b/AAACAAEAAAD9//f/AAACAAAAAAD7//b/AAACAAAAAAD+/wIAAAAEAAMAAAD8/wIAAAAEAAMAAADg//D/AAADAAEAAADg/+7/AAADAAAAAADi/+7/AAACAAEAAADm/+T/AAAEAAMAAFDo//r/AAAEAAMAADDc//b/AAACAAAAAAD+/+D/AAACAAAAAAD7/+H/AAACAAAAAAA=")
+tile_set = SubResource("TileSet_tsfue")
+
+[node name="collision" type="TileMapLayer" parent="Node2D" unique_id=1410306946]
+visible = false
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AADT//P/AAAAAAAAAADU//P/AAAAAAAAAADV//P/AAAAAAAAAADW//P/AAAAAAAAAADX//P/AAAAAAAAAADY//P/AAAAAAAAAADZ//P/AAAAAAAAAADa//P/AAAAAAAAAADT//T/AAAAAAAAAADT//X/AAAAAAAAAADT//b/AAAAAAAAAADT//f/AAAAAAAAAADT//j/AAAAAAAAAADT//n/AAAAAAAAAADT//r/AAAAAAAAAADT//v/AAAAAAAAAADT//z/AAAAAAAAAADT//3/AAAAAAAAAADT//7/AAAAAAAAAADT////AAAAAAAAAADT/wAAAAAAAAAAAADT/wEAAAAAAAAAAADT/wIAAAAAAAAAAADT/wQAAAAAAAAAAADT/wMAAAAAAAAAAADT/wUAAAAAAAAAAADT/wYAAAAAAAAAAADa//T/AAAAAAAAAADa//X/AAAAAAAAAADa//b/AAAAAAAAAADa//f/AAAAAAAAAADa//j/AAAAAAAAAADa//n/AAAAAAAAAADa//r/AAAAAAAAAADa//v/AAAAAAAAAADa//z/AAAAAAAAAADa//3/AAAAAAAAAADa//7/AAAAAAAAAADa////AAAAAAAAAADa/wAAAAAAAAAAAADa/wEAAAAAAAAAAADa/wIAAAAAAAAAAADa/wMAAAAAAAAAAADa/wQAAAAAAAAAAADa/wUAAAAAAAAAAADa/wYAAAAAAAAAAADa/wcAAAAAAAAAAADb/wcAAAAAAAAAAADc/wcAAAAAAAAAAADd/wcAAAAAAAAAAADe/wcAAAAAAAAAAADf/wcAAAAAAAAAAADg/wcAAAAAAAAAAADh/wcAAAAAAAAAAADi/wcAAAAAAAAAAADj/wcAAAAAAAAAAADk/wcAAAAAAAAAAADl/wcAAAAAAAAAAADm/wcAAAAAAAAAAADn/wcAAAAAAAAAAADo/wcAAAAAAAAAAADp/wcAAAAAAAAAAADq/wcAAAAAAAAAAADr/wcAAAAAAAAAAADs/wcAAAAAAAAAAADt/wcAAAAAAAAAAADu/wcAAAAAAAAAAADv/wcAAAAAAAAAAADw/wcAAAAAAAAAAADx/wcAAAAAAAAAAADy/wcAAAAAAAAAAADz/wcAAAAAAAAAAAD0/wcAAAAAAAAAAAD1/wcAAAAAAAAAAAD2/wcAAAAAAAAAAAD3/wcAAAAAAAAAAAD4/wcAAAAAAAAAAAD5/wcAAAAAAAAAAAD6/wcAAAAAAAAAAAD7/wcAAAAAAAAAAAD8/wcAAAAAAAAAAAD9/wcAAAAAAAAAAAD+/wcAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAAAAAAAAAD///v/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAD///j/AAAAAAAAAAD///f/AAAAAAAAAAD///b/AAAAAAAAAAD///X/AAAAAAAAAAD///T/AAAAAAAAAAD///P/AAAAAAAAAAD///L/AAAAAAAAAAD///H/AAAAAAAAAAD///D/AAAAAAAAAAD//+//AAAAAAAAAAD//+7/AAAAAAAAAAD//+3/AAAAAAAAAAD//+z/AAAAAAAAAAD//+v/AAAAAAAAAAD//+r/AAAAAAAAAAD//+n/AAAAAAAAAAD//+j/AAAAAAAAAAD//+f/AAAAAAAAAAD//+b/AAAAAAAAAAD//+X/AAAAAAAAAAD//+T/AAAAAAAAAAD//+P/AAAAAAAAAAD//+L/AAAAAAAAAAD//+H/AAAAAAAAAAD//+D/AAAAAAAAAAD//9//AAAAAAAAAAD//97/AAAAAAAAAAD//93/AAAAAAAAAAD//9z/AAAAAAAAAAD//9v/AAAAAAAAAAD//9r/AAAAAAAAAAD//9n/AAAAAAAAAAD//9j/AAAAAAAAAAD//9f/AAAAAAAAAAD//9b/AAAAAAAAAAD//9T/AAAAAAAAAAD//9P/AAAAAAAAAAD//9X/AAAAAAAAAAD//9L/AAAAAAAAAAD//9H/AAAAAAAAAAD//9D/AAAAAAAAAAD//8//AAAAAAAAAAD//87/AAAAAAAAAAD//83/AAAAAAAAAAD//8z/AAAAAAAAAAD//8v/AAAAAAAAAAD//8r/AAAAAAAAAAD//8n/AAAAAAAAAAD//8j/AAAAAAAAAAD//8f/AAAAAAAAAAD//8b/AAAAAAAAAAD+/8b/AAAAAAAAAAD9/8b/AAAAAAAAAAD8/8b/AAAAAAAAAAD7/8b/AAAAAAAAAAD6/8b/AAAAAAAAAAD5/8b/AAAAAAAAAAD4/8b/AAAAAAAAAAD3/8b/AAAAAAAAAAD2/8b/AAAAAAAAAAD1/8b/AAAAAAAAAAD0/8b/AAAAAAAAAADz/8b/AAAAAAAAAADy/8b/AAAAAAAAAADx/8b/AAAAAAAAAADw/8b/AAAAAAAAAADv/8b/AAAAAAAAAADu/8b/AAAAAAAAAADt/8b/AAAAAAAAAADs/8b/AAAAAAAAAADr/8b/AAAAAAAAAADq/8b/AAAAAAAAAADp/8b/AAAAAAAAAADo/8b/AAAAAAAAAADn/8b/AAAAAAAAAADm/8b/AAAAAAAAAADl/8b/AAAAAAAAAADk/8b/AAAAAAAAAADj/8b/AAAAAAAAAADi/8b/AAAAAAAAAADh/8b/AAAAAAAAAADg/8b/AAAAAAAAAADf/8b/AAAAAAAAAADe/8b/AAAAAAAAAADd/8b/AAAAAAAAAADc/8b/AAAAAAAAAADb/8b/AAAAAAAAAADa/8b/AAAAAAAAAADa/8f/AAAAAAAAAADa/8j/AAAAAAAAAADa/8n/AAAAAAAAAADa/8r/AAAAAAAAAADa/8v/AAAAAAAAAADa/8z/AAAAAAAAAADa/83/AAAAAAAAAADa/87/AAAAAAAAAADa/8//AAAAAAAAAADa/9D/AAAAAAAAAADa/9H/AAAAAAAAAADa/9L/AAAAAAAAAADa/9P/AAAAAAAAAADa/9T/AAAAAAAAAADa/9X/AAAAAAAAAADa/9b/AAAAAAAAAADa/9f/AAAAAAAAAADa/9j/AAAAAAAAAADa/9n/AAAAAAAAAADa/9r/AAAAAAAAAADa/9v/AAAAAAAAAADa/9z/AAAAAAAAAADa/93/AAAAAAAAAADa/97/AAAAAAAAAADa/9//AAAAAAAAAADa/+D/AAAAAAAAAADa/+H/AAAAAAAAAADa/+L/AAAAAAAAAADT/wcAAAAAAAAAAADS/wcAAAAAAAAAAADR/wcAAAAAAAAAAADQ/wcAAAAAAAAAAADP/wcAAAAAAAAAAADO/wcAAAAAAAAAAADN/wcAAAAAAAAAAADM/wcAAAAAAAAAAADL/wcAAAAAAAAAAADK/wcAAAAAAAAAAADJ/wcAAAAAAAAAAADI/wcAAAAAAAAAAADH/wcAAAAAAAAAAADG/wcAAAAAAAAAAADF/wcAAAAAAAAAAADE/wcAAAAAAAAAAADD/wcAAAAAAAAAAADC/wcAAAAAAAAAAADB/wcAAAAAAAAAAADA/wcAAAAAAAAAAAC//wcAAAAAAAAAAAC+/wcAAAAAAAAAAAC9/wcAAAAAAAAAAAC8/wcAAAAAAAAAAAC7/wcAAAAAAAAAAAC6/wcAAAAAAAAAAAC5/wcAAAAAAAAAAAC4/wcAAAAAAAAAAAC3/wcAAAAAAAAAAAC2/wcAAAAAAAAAAAC2/wYAAAAAAAAAAAC2/wUAAAAAAAAAAAC2/wQAAAAAAAAAAAC2/wMAAAAAAAAAAAC2/wIAAAAAAAAAAAC2/wEAAAAAAAAAAAC2/wAAAAAAAAAAAAC2////AAAAAAAAAAC2//7/AAAAAAAAAAC2//3/AAAAAAAAAAC2//z/AAAAAAAAAAC2//v/AAAAAAAAAAC2//r/AAAAAAAAAAC2//n/AAAAAAAAAAC2//j/AAAAAAAAAAC2//f/AAAAAAAAAAC2//b/AAAAAAAAAAC2//X/AAAAAAAAAAC2//T/AAAAAAAAAAC2//P/AAAAAAAAAAC2//L/AAAAAAAAAAC2//H/AAAAAAAAAAC2//D/AAAAAAAAAAC2/+//AAAAAAAAAAC2/+7/AAAAAAAAAAC2/+3/AAAAAAAAAAC2/+z/AAAAAAAAAAC2/+v/AAAAAAAAAAC2/+r/AAAAAAAAAAC2/+n/AAAAAAAAAAC2/+j/AAAAAAAAAAC2/+f/AAAAAAAAAAC2/+b/AAAAAAAAAAC2/+X/AAAAAAAAAAC2/+T/AAAAAAAAAAC2/+P/AAAAAAAAAAC2/+L/AAAAAAAAAAC2/+H/AAAAAAAAAAC2/+D/AAAAAAAAAAC2/9//AAAAAAAAAAC2/97/AAAAAAAAAAC2/93/AAAAAAAAAAC2/9z/AAAAAAAAAAC2/9v/AAAAAAAAAAC2/9r/AAAAAAAAAAC3/+L/AAAAAAAAAAC4/+L/AAAAAAAAAAC5/+L/AAAAAAAAAAC6/+L/AAAAAAAAAAC7/+L/AAAAAAAAAAC8/+L/AAAAAAAAAAC9/+L/AAAAAAAAAAC+/+L/AAAAAAAAAAC//+L/AAAAAAAAAADA/+L/AAAAAAAAAADB/+L/AAAAAAAA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AAC8/8f/AAAAAAAAAAC8/8j/AAAAAAAAAAC8/8n/AAAAAAAAAAC8/8r/AAAAAAAAAAC8/8v/AAAAAAAAAAC8/8z/AAAAAAAAAAC8/83/AAAAAAAAAAC8/87/AAAAAAAAAAC8/8//AAAAAAAAAAC8/9D/AAAAAAAAAAC8/9H/AAAAAAAAAAC8/9L/AAAAAAAAAAC8/9P/AAAAAAAAAAC8/9T/AAAAAAAAAAC8/9X/AAAAAAAAAAC8/9b/AAAAAAAAAAC8/9f/AAAAAAAAAAC8/9j/AAAAAAAAAAC8/9n/AAAAAAAAAAC8/9r/AAAAAAAAAAC7/9r/AAAAAAAAAAC6/9r/AAAAAAAAAAC5/9r/AAAAAAAAAAC4/9r/AAAAAAAAAAC3/9r/AAAAAAAAAAC8/9v/AAAAAAAAAAC8/9z/AAAAAAAAAAC8/93/AAAAAAAAAAC8/97/AAAAAAAAAAC8/9//AAAAAAAAAAC8/+D/AAAAAAAAAAC8/+H/AAAAAAAAAADN/9v/AAAAAAAAAADN/9z/AAAAAAAAAADN/93/AAAAAAAAAADN/97/AAAAAAAAAADN/9//AAAAAAAAAADN/+D/AAAAAAAAAADN/+H/AAAAAAAAAADO/9r/AAAAAAAAAADP/9r/AAAAAAAAAADQ/9r/AAAAAAAAAADR/9r/AAAAAAAAAADS/9r/AAAAAAAAAADT/9r/AAAAAAAAAADU/9r/AAAAAAAAAADV/9r/AAAAAAAAAADW/9r/AAAAAAAAAADX/9r/AAAAAAAAAADY/9r/AAAAAAAAAADZ/9r/AAAAAAAAAAD9/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD7/wUAAAAAAAAAAAD9/wYAAAAAAAAAAAD8/wYAAAAAAAAAAAD7/wYAAAAAAAAAAAD5/wUAAAAAAAAAAAD4/wUAAAAAAAAAAAD3/wUAAAAAAAAAAAD3/wYAAAAAAAAAAAD4/wYAAAAAAAAAAAD5/wYAAAAAAAAAAADQ//P/AAAAAAAAAADQ//T/AAAAAAAAAADR//T/AAAAAAAAAADS//T/AAAAAAAAAADS//P/AAAAAAAAAADR//P/AAAAAAAAAADL/8f/AAAAAAAAAADM/8f/AAAAAAAAAADM/8j/AAAAAAAAAADL/8j/AAAAAAAAAADL/8n/AAAAAAAAAADM/8n/AAAAAAAAAADL/8r/AAAAAAIAAADM/8r/AAAAAAIAAADP//T/AAAAAAIAAFDP//P/AAAAAAIAAFD6/wUAAAAAAAIAAGD6/wYAAAAAAAIAAGD+/wUAAAAAAAIAAGD+/wYAAAAAAAIAAGDj//H/AAAAAAAAAADj//D/AAAAAAAAAADj/+//AAAAAAAAAADk/+//AAAAAAAAAADl/+//AAAAAAAAAADm/+//AAAAAAAAAADn/+//AAAAAAAAAADo/+//AAAAAAAAAADp/+//AAAAAAAAAADq/+//AAAAAAAAAADr/+//AAAAAAAAAADs/+//AAAAAAAAAADt/+//AAAAAAAAAADu/+//AAAAAAAAAADv/+//AAAAAAAAAADw/+//AAAAAAAAAADx/+//AAAAAAAAAADy/+//AAAAAAAAAADz/+//AAAAAAAAAAD0/+//AAAAAAAAAAD1/+//AAAAAAAAAAD2/+//AAAAAAAAAAD3/+//AAAAAAAAAAD4/+//AAAAAAAAAAD5/+//AAAAAAAAAAD6/+//AAAAAAAAAAD7/+//AAAAAAAAAAD8/+//AAAAAAAAAAD9/+//AAAAAAAAAAD+/+//AAAAAAAAAADe//H/AAAAAAAAAADe//D/AAAAAAAAAADe/+//AAAAAAAAAADd/+//AAAAAAAAAADc/+//AAAAAAAAAADb/+//AAAAAAAAAADb//D/AAAAAAAAAADb//H/AAAAAAAAAADS//H/AAAAAAAAAADS//D/AAAAAAAAAADS/+//AAAAAAAAAADR/+//AAAAAAAAAADQ/+//AAAAAAAAAADP/+//AAAAAAAAAADO/+//AAAAAAAAAADN/+//AAAAAAAAAADM/+//AAAAAAAAAADL/+//AAAAAAAAAADK/+//AAAAAAAAAADJ/+//AAAAAAAAAADI/+//AAAAAAAAAADH/+//AAAAAAAAAADG/+//AAAAAAAAAADF/+//AAAAAAAAAADE/+//AAAAAAAAAADD/+//AAAAAAAAAADD//D/AAAAAAAAAADD//H/AAAAAAAAAADE//H/AAAAAAAAAAC+/+//AAAAAAAAAAC+//D/AAAAAAAAAAC+//H/AAAAAAAAAAC9/+//AAAAAAAAAAC8/+//AAAAAAAAAAC7/+//AAAAAAAAAAC6/+//AAAAAAAAAAC5/+//AAAAAAAAAAC4/+//AAAAAAAAAAC3/+//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_48que")
+
+[node name="Decorations" type="Node" parent="." unique_id=1730573447]
+
+[node name="PStudentdesk" type="Sprite2D" parent="Decorations" unique_id=2052348628]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2229, -273.00003)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk" unique_id=2129989433]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk/StaticBody2D" unique_id=1821665715]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk2" type="Sprite2D" parent="Decorations" unique_id=1865908294]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2655, -275)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk2" unique_id=1351967543]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk2/StaticBody2D" unique_id=288328830]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk3" type="Sprite2D" parent="Decorations" unique_id=53359644]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2644, -60.000008)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk3" unique_id=118546885]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk3/StaticBody2D" unique_id=1295948268]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk4" type="Sprite2D" parent="Decorations" unique_id=202114151]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2223.0002, -66.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk4" unique_id=908611976]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk4/StaticBody2D" unique_id=1869177058]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk5" type="Sprite2D" parent="Decorations" unique_id=920592645]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2221.0002, 147.99997)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk5" unique_id=528620068]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk5/StaticBody2D" unique_id=756734203]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk6" type="Sprite2D" parent="Decorations" unique_id=579142868]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2645, 143)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk6" unique_id=2048881184]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk6/StaticBody2D" unique_id=204040968]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentchair" type="Sprite2D" parent="Decorations" unique_id=593572940]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2220, 142.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair2" type="Sprite2D" parent="Decorations" unique_id=1562809648]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2656, -293.99994)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair3" type="Sprite2D" parent="Decorations" unique_id=172924765]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2227, -285.99994)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair4" type="Sprite2D" parent="Decorations" unique_id=1385708]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2223, -75.999985)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair5" type="Sprite2D" parent="Decorations" unique_id=989261094]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2646, -71.999985)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair6" type="Sprite2D" parent="Decorations" unique_id=194138512]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2645, 128)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentdesk7" type="Sprite2D" parent="Decorations" unique_id=2087712592]
+z_index = 1
+texture_filter = 1
+position = Vector2(-200.00003, -303.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk7" unique_id=873618306]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk7/StaticBody2D" unique_id=531383554]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk8" type="Sprite2D" parent="Decorations" unique_id=618396722]
+z_index = 1
+texture_filter = 1
+position = Vector2(-626, -305.00006)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk8" unique_id=1619684804]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk8/StaticBody2D" unique_id=1273046159]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk9" type="Sprite2D" parent="Decorations" unique_id=1891622620]
+z_index = 1
+texture_filter = 1
+position = Vector2(-615, -90.00007)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk9" unique_id=1781925596]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk9/StaticBody2D" unique_id=295993589]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk10" type="Sprite2D" parent="Decorations" unique_id=669168745]
+z_index = 1
+texture_filter = 1
+position = Vector2(-194.00027, -96.000084)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk10" unique_id=502910740]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk10/StaticBody2D" unique_id=807763068]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk11" type="Sprite2D" parent="Decorations" unique_id=1139161892]
+z_index = 1
+texture_filter = 1
+position = Vector2(-192.00027, 117.99991)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk11" unique_id=2086487897]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk11/StaticBody2D" unique_id=1127023945]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk12" type="Sprite2D" parent="Decorations" unique_id=1137916308]
+z_index = 1
+texture_filter = 1
+position = Vector2(-616, 112.99994)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk12" unique_id=104438807]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk12/StaticBody2D" unique_id=1201027141]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentchair7" type="Sprite2D" parent="Decorations" unique_id=820905717]
+z_index = 1
+texture_filter = 1
+position = Vector2(-191.00003, 111.999954)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair8" type="Sprite2D" parent="Decorations" unique_id=1652952917]
+z_index = 1
+texture_filter = 1
+position = Vector2(-627, -324)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair9" type="Sprite2D" parent="Decorations" unique_id=740100974]
+z_index = 1
+texture_filter = 1
+position = Vector2(-198.00003, -316)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair10" type="Sprite2D" parent="Decorations" unique_id=13774060]
+z_index = 1
+texture_filter = 1
+position = Vector2(-194.00003, -106.000046)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair11" type="Sprite2D" parent="Decorations" unique_id=250014892]
+z_index = 1
+texture_filter = 1
+position = Vector2(-617, -102.000046)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair12" type="Sprite2D" parent="Decorations" unique_id=1303924203]
+z_index = 1
+texture_filter = 1
+position = Vector2(-616, 97.99994)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentdesk13" type="Sprite2D" parent="Decorations" unique_id=831242006]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1085, -305.00006)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk13" unique_id=498102741]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk13/StaticBody2D" unique_id=130690082]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk14" type="Sprite2D" parent="Decorations" unique_id=2137544086]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1074, -90.00007)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk14" unique_id=1473725209]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk14/StaticBody2D" unique_id=655756125]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk15" type="Sprite2D" parent="Decorations" unique_id=1354203814]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1075, 112.99994)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk15" unique_id=902248601]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk15/StaticBody2D" unique_id=501861206]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentchair13" type="Sprite2D" parent="Decorations" unique_id=352353607]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1086, -324)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair14" type="Sprite2D" parent="Decorations" unique_id=976105269]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1076, -102.000046)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair15" type="Sprite2D" parent="Decorations" unique_id=276431037]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1075, 97.99994)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentdesk16" type="Sprite2D" parent="Decorations" unique_id=1447995848]
+z_index = 1
+texture_filter = 1
+position = Vector2(-184.00002, -1990.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk16" unique_id=1480159288]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk16/StaticBody2D" unique_id=1017598012]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk17" type="Sprite2D" parent="Decorations" unique_id=249660930]
+z_index = 1
+texture_filter = 1
+position = Vector2(-610, -1992.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk17" unique_id=244920722]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk17/StaticBody2D" unique_id=1156082574]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk18" type="Sprite2D" parent="Decorations" unique_id=1511240829]
+z_index = 1
+texture_filter = 1
+position = Vector2(-599, -1777.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk18" unique_id=1978530714]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk18/StaticBody2D" unique_id=1117436864]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk19" type="Sprite2D" parent="Decorations" unique_id=608606635]
+z_index = 1
+texture_filter = 1
+position = Vector2(-178.00026, -1783.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk19" unique_id=880136097]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk19/StaticBody2D" unique_id=984350076]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk20" type="Sprite2D" parent="Decorations" unique_id=2145508443]
+z_index = 1
+texture_filter = 1
+position = Vector2(-176.00026, -1569.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk20" unique_id=1556241915]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk20/StaticBody2D" unique_id=1149706225]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk21" type="Sprite2D" parent="Decorations" unique_id=1606845079]
+z_index = 1
+texture_filter = 1
+position = Vector2(-600, -1574.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk21" unique_id=537988219]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk21/StaticBody2D" unique_id=313707674]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentchair16" type="Sprite2D" parent="Decorations" unique_id=62054167]
+z_index = 1
+texture_filter = 1
+position = Vector2(-175.00002, -1575)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair17" type="Sprite2D" parent="Decorations" unique_id=835243038]
+z_index = 1
+texture_filter = 1
+position = Vector2(-611, -2011)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair18" type="Sprite2D" parent="Decorations" unique_id=1302821942]
+z_index = 1
+texture_filter = 1
+position = Vector2(-182.00002, -2003)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair19" type="Sprite2D" parent="Decorations" unique_id=1309469223]
+z_index = 1
+texture_filter = 1
+position = Vector2(-178.00002, -1793)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair20" type="Sprite2D" parent="Decorations" unique_id=1708459939]
+z_index = 1
+texture_filter = 1
+position = Vector2(-601, -1789)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair21" type="Sprite2D" parent="Decorations" unique_id=1604572520]
+z_index = 1
+texture_filter = 1
+position = Vector2(-600, -1589.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentdesk22" type="Sprite2D" parent="Decorations" unique_id=418831474]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1069, -1992.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk22" unique_id=1387854430]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk22/StaticBody2D" unique_id=1246818510]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk23" type="Sprite2D" parent="Decorations" unique_id=933401291]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1058, -1777.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk23" unique_id=1930599961]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk23/StaticBody2D" unique_id=2120180171]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentdesk24" type="Sprite2D" parent="Decorations" unique_id=1818041697]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1059, -1574.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("6_b6bv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PStudentdesk24" unique_id=1567150481]
+position = Vector2(0.3999878, -6.1999955)
+scale = Vector2(0.9999998, 0.9999998)
+physics_material_override = SubResource("PhysicsMaterial_ebgam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PStudentdesk24/StaticBody2D" unique_id=480459123]
+z_index = 2
+position = Vector2(-0.1000061, 0.40000153)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ebgam")
+
+[node name="PStudentchair22" type="Sprite2D" parent="Decorations" unique_id=393940506]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1070, -2011)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair23" type="Sprite2D" parent="Decorations" unique_id=732678666]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1060, -1789)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PStudentchair24" type="Sprite2D" parent="Decorations" unique_id=1981513269]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1059, -1589.0001)
+scale = Vector2(5, 5)
+texture = ExtResource("7_ubwgw")
+
+[node name="PTeacherdesk" type="Sprite2D" parent="Decorations" unique_id=72638896]
+z_index = 2
+texture_filter = 1
+position = Vector2(-611, -2200)
+scale = Vector2(5, 5)
+texture = ExtResource("8_vkq25")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PTeacherdesk" unique_id=93205645]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PTeacherdesk/StaticBody2D" unique_id=123578582]
+z_index = 2
+position = Vector2(-0.19999695, -5.5)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_fxt1f")
+
+[node name="PTeacherdesk2" type="Sprite2D" parent="Decorations" unique_id=475877939]
+z_index = 2
+texture_filter = 1
+position = Vector2(-631, -501.99997)
+scale = Vector2(5, 5)
+texture = ExtResource("8_vkq25")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PTeacherdesk2" unique_id=221329357]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PTeacherdesk2/StaticBody2D" unique_id=1246006822]
+z_index = 2
+position = Vector2(-0.19999695, -5.5)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_fxt1f")
+
+[node name="PTeacherdesk3" type="Sprite2D" parent="Decorations" unique_id=167129730]
+z_index = 2
+texture_filter = 1
+position = Vector2(-2226, -497)
+scale = Vector2(5, 5)
+texture = ExtResource("8_vkq25")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PTeacherdesk3" unique_id=1806896668]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PTeacherdesk3/StaticBody2D" unique_id=380640183]
+z_index = 2
+position = Vector2(-0.19999695, -5.5)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_fxt1f")
+
+[node name="PTeacherdesk4" type="Sprite2D" parent="Decorations" unique_id=2115179042]
+z_index = 2
+texture_filter = 1
+position = Vector2(-2369, -2267)
+scale = Vector2(5, 5)
+texture = ExtResource("8_vkq25")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PTeacherdesk4" unique_id=1203654983]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PTeacherdesk4/StaticBody2D" unique_id=956064170]
+z_index = 2
+position = Vector2(-0.19999695, -5.5)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_fxt1f")
+
+[node name="PTeacherdesk5" type="Sprite2D" parent="Decorations" unique_id=1266911689]
+z_index = 2
+texture_filter = 1
+position = Vector2(-139, -2270.0002)
+scale = Vector2(5, 5)
+texture = ExtResource("8_vkq25")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/PTeacherdesk5" unique_id=975142549]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/PTeacherdesk5/StaticBody2D" unique_id=1661309846]
+z_index = 2
+position = Vector2(-0.19999695, -5.5)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_fxt1f")
+
+[node name="PComputerBackside" type="Sprite2D" parent="." unique_id=1681891232]
+z_index = 5
+position = Vector2(-2429, -2267.0002)
+scale = Vector2(5, 5)
+texture = ExtResource("9_7lrji")
+
+[node name="Coffemaker2" parent="." unique_id=1603030687 instance=ExtResource("3_y0acb")]
+z_index = 2
+position = Vector2(-231, -2342)
+
+[node name="TeddyBear2" parent="." unique_id=510413137 instance=ExtResource("2_2vj2h")]
+z_index = 2
+position = Vector2(-470, -499)
+
+[node name="Keypad" parent="." unique_id=803994468 instance=ExtResource("4_u81e1")]
+position = Vector2(-2610, -1270)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=254037404]
+
+[node name="MuteButton" parent="CanvasLayer" unique_id=959389631 instance=ExtResource("11_hwp66")]
+offset_left = 1033.0
+offset_top = -19.0
+offset_right = 1073.0
+offset_bottom = 21.0
+
+[node name="TestTeacher" parent="CanvasLayer" unique_id=1209084858 instance=ExtResource("12_2xkjh")]
+position = Vector2(-1437, -935)
+pin_code_sounds = Array[AudioStreamWAV]([ExtResource("13_qy6q0"), ExtResource("14_ykry0"), ExtResource("15_im81g"), ExtResource("16_ysjpo"), ExtResource("17_gexqn"), ExtResource("18_kc8j3"), ExtResource("19_e5eww"), ExtResource("20_ygu70"), ExtResource("21_x5gqu"), ExtResource("22_8qayg")])
+
+[node name="InteractableObject" parent="CanvasLayer" unique_id=1435307137 instance=ExtResource("23_ykry0")]
+position = Vector2(-2428, -2265)

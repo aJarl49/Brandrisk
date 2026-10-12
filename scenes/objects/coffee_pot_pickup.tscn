@@ -1,25 +1,24 @@
 [gd_scene format=3 uid="uid://66p0vyux3t71"]
 
 [ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_o3eo6"]
-[ext_resource type="Script" uid="uid://cx6vbyx88l4d3" path="res://scripts/objects/coffe_pot_pickup.gd" id="2_dbser"]
+[ext_resource type="Script" uid="uid://bbi038cj243pb" path="res://scripts/objects/pickup_item.gd" id="2_o3eo6"]
 [ext_resource type="Texture2D" uid="uid://dvxhlk1mh3gu" path="res://assets/sprites/Props/p_kaffekanna.png" id="3_2d4f0"]
-[ext_resource type="Texture2D" uid="uid://c3mrsuixdwh2c" path="res://assets/sprites/Props/p_cotton.png" id="3_35g0f"]
 [ext_resource type="Texture2D" uid="uid://b0h4at2uh6u2b" path="res://assets/sprites/Props/p_kaffekanna_OL.png" id="4_35g0f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5675"]
 
 [node name="InteractableObject" unique_id=1435307137 instance=ExtResource("1_o3eo6")]
-script = ExtResource("2_dbser")
+script = ExtResource("2_o3eo6")
+item_id = "coffee pot"
+action_text = "pick up coffee pot"
 item_texture = ExtResource("3_2d4f0")
 normal_texture = ExtResource("3_2d4f0")
 highlighted_texture = ExtResource("4_35g0f")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1594366038]
-modulate = Color(1, 1, 1, 1)
 texture_filter = 1
-position = Vector2(-81.99999, 0)
 scale = Vector2(5, 5)
-texture = ExtResource("3_35g0f")
+texture = ExtResource("3_2d4f0")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=68815441]
 shape = SubResource("CircleShape2D_h5675")

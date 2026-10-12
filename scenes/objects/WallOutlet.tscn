@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bviolqye1fdqs"]
+
+[ext_resource type="PackedScene" uid="uid://bu21j7lndej78" path="res://scenes/objects/interactable_object.tscn" id="1_hvsyq"]
+[ext_resource type="Texture2D" uid="uid://b6t6bpakp44cj" path="res://assets/sprites/Props/p_WallOutlet_2.png" id="2_i2u33"]
+[ext_resource type="Texture2D" uid="uid://dab5u0w2mey36" path="res://assets/sprites/Props/p_WallOutlet_OL2.png" id="3_pyq2v"]
+[ext_resource type="Texture2D" uid="uid://dnppoeyvk4nyx" path="res://assets/sprites/Props/p_ExtensionCord_InWall2.png" id="4_n6yy5"]
+[ext_resource type="Texture2D" uid="uid://mvrppaubaxry" path="res://assets/sprites/Props/p_ExtensionCord_InWall_OL2.png" id="5_n6yy5"]
+[ext_resource type="PackedScene" uid="uid://dpp8l4p6y7que" path="res://scenes/objects/fire_animation.tscn" id="6_8oryp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6yy5"]
+
+[node name="InteractableObject" unique_id=1435307137 instance=ExtResource("1_hvsyq")]
+step1_action_text = "plug in power strip"
+step1_normal_texture = ExtResource("2_i2u33")
+step1_highlighted_texture = ExtResource("3_pyq2v")
+step1_required_item = "power strip"
+step2_action_text = "pour coffee on plugged in power strip"
+step2_normal_texture = ExtResource("4_n6yy5")
+step2_highlighted_texture = ExtResource("5_n6yy5")
+step2_required_item = "coffee pot"
+step2_gives_texture = ExtResource("4_n6yy5")
+final_texture = ExtResource("4_n6yy5")
+finish_spawn_scene = ExtResource("6_8oryp")
+finish_spawn_offset = Vector2(-25, -15)
+
+[node name="Sprite2D" parent="." index="0" unique_id=1594366038]
+scale = Vector2(5, 5)
+texture = ExtResource("2_i2u33")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=68815441]
+shape = SubResource("RectangleShape2D_n6yy5")

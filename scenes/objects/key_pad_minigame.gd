@@ -1,6 +1,9 @@
 extends Node2D
 
 @export var code_generator_node: Node
+
+var player = null
+
 signal keypad_minigame_successful
 signal keypad_minigame_failed
 
